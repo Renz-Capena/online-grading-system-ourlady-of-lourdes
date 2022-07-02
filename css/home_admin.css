@@ -1,0 +1,220 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: courier;
+    /* border: 1px solid red; */
+}
+body{
+    text-align: center;
+    background-color: rgba(0, 153, 255, 0.39);
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    background-color: rgb(7, 121, 197);
+    top:0;
+    width: 100%;
+    position: fixed;
+    /* display: none; */
+}
+.ollc-logo{
+    width: 1000px;
+    margin-left: 50px;
+    display: flex;
+    align-items: center;
+}
+.ollc-logo p{
+    margin-left: 30px;
+    letter-spacing: 2px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+}
+.ollc-logo img{
+    width: 75px;
+}
+.nav-sub{
+    margin-right: 50px;
+    display: flex;
+}
+.nav-sub a{
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin: 0px 20px;
+    padding: 10px;
+    width: 150px;
+    line-height: 2;
+}
+.nav-sub a::after{  
+    content: '';
+    height: 2px;
+    width: 0%;
+    background-color: rgb(255, 255, 255);
+    display: block;
+    transition: .5s ease-in-out;
+}
+.nav-sub a:hover::after{
+    content: '';
+    height: 2px;
+    width: 100%;
+    display: block;
+}
+.nav-sub button{
+    letter-spacing: 2px;
+    font-family: courier;
+    font-size: 16px;
+    background: none;
+    border: none;
+    width: 100px;
+    color: rgb(255, 255, 255);
+    margin: 0px 20px;
+    padding: 10px;
+    line-height: 2;
+    cursor: pointer;
+}
+.nav-sub button::after{  
+    content: '';
+    height: 2px;
+    width: 0%;
+    background-color: rgb(255, 255, 255);
+    display: block;
+    transition: .5s ease-in-out;
+}
+.nav-sub button:hover::after{
+    content: '';
+    height: 2px;
+    width: 100%;
+    display: block;
+}
+.btn{
+    color: black;
+    text-decoration: none;
+    background: none;
+    border: 1px solid;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: black;
+    color:white;
+    transition: 0.5s;
+}
+/*------------------------------------------------ student_form */
+.student_form{
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+    padding: 40px 0px;
+    width: 400px;
+    box-shadow: 3px 3px 10px;
+    border-radius: 10px;
+    display: none;
+    transition: 1s;
+    background-color: rgb(206, 232, 255);
+}
+.container_info_login{
+    margin: 30px 0px;
+}
+.container_info_login input{
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid;
+    outline: none;
+    text-align: center;
+    background: none;
+    height: 30px;
+}
+/*------------------------------------------- teacher form */
+.teacher_form{
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+    padding: 40px 0px;
+    width: 400px;
+    box-shadow: 3px 3px 10px;
+    border-radius: 10px;
+    display: none;
+    background-color: rgb(206, 232, 255);
+}
+.teacher_signin_form{
+    margin-top: 20px;
+}
+/*----------------------------------- teacher_table */
+.table_wrapper{
+    margin-top: 120px;
+}
+tbody tr{
+    cursor: pointer;
+    background-color: rgba(98, 132, 161, 0.397);
+    height: 50px;
+    text-transform: capitalize;
+}
+tbody tr:hover{
+    background-color: rgba(0, 159, 233, 0.486);
+    transition: .5s;
+}
+caption{
+    padding: 20px;
+    font-size: 25px;
+    font-weight: bolder;
+    background-color: rgba(113, 188, 253, 0.842);
+}
+.action_row{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 7px;
+}
+/* --------------------------------------teacher table */
+.teacher_table{
+    width: 100%;
+}
+/* ---------------------------------------student table */
+.student_table{
+    margin-top: 70px;
+    width: 100%;
+}
+/* -------------------------------------edit_home php */
+.teacher_form_update{
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 120px;
+    padding: 40px 0px;
+    width: 400px;
+    box-shadow: 3px 3px 10px;
+    border-radius: 10px;
+    background-color: rgb(206, 232, 255);
+    position: fixed;
+}
+/*----------------------------------------- student_form_update */
+.student_form_update{
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 120px;
+    padding: 40px 0px;
+    width: 400px;
+    box-shadow: 3px 3px 10px;
+    border-radius: 10px;
+    background-color: rgb(206, 232, 255);
+    position: fixed;
+}
