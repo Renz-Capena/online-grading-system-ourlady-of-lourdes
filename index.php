@@ -35,6 +35,7 @@
         }else if($valid_1 == 1){
 
             $_SESSION['status'] = $row_1['status'];
+            $_SESSION['user_id'] = $row_1['id'];
             header("location: home_student.php");
 
         }else if($valid_2 == 1){

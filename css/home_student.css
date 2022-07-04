@@ -6,7 +6,7 @@
 }
 body{
     text-align: center;
-    background-color: rgba(180, 180, 180, 0.39);
+    background-color: rgb(180, 180, 180);
 }
 nav{
     display: flex;
@@ -90,14 +90,39 @@ nav{
 }
 /* =======================================section */
 section{
-    border: 1px solid red;
-    margin-top: 100px;
+    margin-top: 200px;
+}
+.image_bg{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(5px);
+    opacity: 0.7;
 }
 table{
+    padding: 20px;
+    color: whitesmoke;
+    background: rgba(0, 0, 0, 0.623);
+    width: 900px;
+    margin: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+tr th{
+    border: 1px solid;
+    width: 100px;;
+    height: 50px;
+}
+tr td{
+    padding: 10px;
+}
+.subjects{
     border: 1px solid;
 }
-td input[type="number"]{
-    text-align: center;
+td input{
     width: 50px;
-    margin: 0px 5px;
+    text-align: center;
 }

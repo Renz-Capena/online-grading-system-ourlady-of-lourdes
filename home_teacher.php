@@ -19,56 +19,62 @@
     }
 
     if(isset($_POST['create_grade'])){
-    // -----------------------------------------student command update card
+
         $student_id = $_POST['student_id'];
 
-        $command_update = "UPDATE `students` SET `card`='RECORDED' WHERE id='$student_id'";
-        $con->query($command_update);
+        $command_validate = "SELECT * FROM `students` WHERE id='$student_id' AND card='NO RECORD'";
+        $list = $con->query($command_validate);
+        $row = $list->fetch_assoc();
+        $valid = $list->num_rows;
 
-
-
-
-
-    //    echo "<script>alert('sample')</script>";
-    //-------------------------------------------------- grades command
-        
-
-        $f_1 = $_POST['f_1'];
-        $f_2 = $_POST['f_2'];
-        $f_3 = $_POST['f_3'];
-        $f_4 = $_POST['f_4'];
-
-        $e_1 = $_POST['e_1'];
-        $e_2 = $_POST['e_2'];
-        $e_3 = $_POST['e_3'];
-        $e_4 = $_POST['e_4'];
-
-        $s_1 = $_POST['s_1'];
-        $s_2 = $_POST['s_2'];
-        $s_3 = $_POST['s_3'];
-        $s_4 = $_POST['s_4'];
     
+        if($valid != 0){
+        // -----------------------------------------student command update card
+            $command_update = "UPDATE `students` SET `card`='RECORDED' WHERE id='$student_id'";
+            $con->query($command_update);
+        //-------------------------------------------------- grades command
 
-        $m_1 = $_POST['m_1'];
-        $m_2 = $_POST['m_2'];
-        $m_3 = $_POST['m_3'];
-        $m_4 = $_POST['m_4'];
+            $f_1 = $_POST['f_1'];
+            $f_2 = $_POST['f_2'];
+            $f_3 = $_POST['f_3'];
+            $f_4 = $_POST['f_4'];
 
-        $h_1 = $_POST['h_1'];
-        $h_2 = $_POST['h_2'];
-        $h_3 = $_POST['h_3'];
-        $h_4 = $_POST['h_4'];
+            $e_1 = $_POST['e_1'];
+            $e_2 = $_POST['e_2'];
+            $e_3 = $_POST['e_3'];
+            $e_4 = $_POST['e_4'];
 
-        $p_1 = $_POST['p_1'];
-        $p_2 = $_POST['p_2'];
-        $p_3 = $_POST['p_3'];
-        $p_4 = $_POST['p_4'];
-
-        $command = "INSERT INTO `grades`(`user_id`, `f_1`, `f_2`, `f_3`, `f_4`, `e_1`, `e_2`, `e_3`, `e_4`, `s_1`, `s_2`, `s_3`, `s_4`, `m_1`, `m_2`, `m_3`, `m_4`, `h_1`, `h_2`, `h_3`, `h_4`, `p_1`, `p_2`, `p_3`, `p_4`) VALUES ('$student_id','$f_1','$f_2','$f_3','$f_4','$e_1','$e_2','$e_3','$e_4','$s_1','$s_2','$s_3','$s_4','$m_1','$m_2','$m_3','$m_4','$h_1','$h_2','$h_3','$h_4','$p_1','$p_2','$p_3','$p_4')";
-
-        $con->query($command);
+            $s_1 = $_POST['s_1'];
+            $s_2 = $_POST['s_2'];
+            $s_3 = $_POST['s_3'];
+            $s_4 = $_POST['s_4'];
         
-        header("location: home_teacher.php");
+
+            $m_1 = $_POST['m_1'];
+            $m_2 = $_POST['m_2'];
+            $m_3 = $_POST['m_3'];
+            $m_4 = $_POST['m_4'];
+
+            $h_1 = $_POST['h_1'];
+            $h_2 = $_POST['h_2'];
+            $h_3 = $_POST['h_3'];
+            $h_4 = $_POST['h_4'];
+
+            $p_1 = $_POST['p_1'];
+            $p_2 = $_POST['p_2'];
+            $p_3 = $_POST['p_3'];
+            $p_4 = $_POST['p_4'];
+
+            $command = "INSERT INTO `grades`(`user_id`, `f_1`, `f_2`, `f_3`, `f_4`, `e_1`, `e_2`, `e_3`, `e_4`, `s_1`, `s_2`, `s_3`, `s_4`, `m_1`, `m_2`, `m_3`, `m_4`, `h_1`, `h_2`, `h_3`, `h_4`, `p_1`, `p_2`, `p_3`, `p_4`) VALUES ('$student_id','$f_1','$f_2','$f_3','$f_4','$e_1','$e_2','$e_3','$e_4','$s_1','$s_2','$s_3','$s_4','$m_1','$m_2','$m_3','$m_4','$h_1','$h_2','$h_3','$h_4','$p_1','$p_2','$p_3','$p_4')";
+
+            $con->query($command);
+            
+            header("location: home_teacher.php");
+        }else{
+            echo "<script>alert('THAT ID IS ALREADY RECORDED OR NO SUCH STUDENT')</script>";
+
+            
+        }
     }
 ?>
 <!DOCTYPE html>
@@ -95,6 +101,7 @@
         </div>
     </nav>
     <!-- ----------------------------------------section -->
+    <img src="img/bg.jpg" alt="sample" class="image_bg">
     <section>
         <button class="btn recorded">STUDENTS WITH RECORDS</button>
         <button class="btn not_recorded">STUDENTS WITH NO RECORDS</button>
