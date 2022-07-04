@@ -115,15 +115,15 @@
                 </thead>
                 <tbody>
                 <?php do{ ?>
-                    <tr>
-                        <td><?php echo $row_recorded['id']?></td>
-                        <td><?php echo $row_recorded['f_name']?></td>
-                        <td><?php echo $row_recorded['l_name']?></td>
-                        <td><?php echo $row_recorded['grade']?></td>
-                        <td><?php echo $row_recorded['email']?></td>
-                        <td><?php echo $row_recorded['password']?></td>
-                        <td><?php echo $row_recorded['card']?></td>
-                    </tr>
+                        <tr>
+                            <td><?php echo $row_recorded['id']?></td>
+                            <td><?php echo $row_recorded['f_name']?></td>
+                            <td><?php echo $row_recorded['l_name']?></td>
+                            <td><?php echo $row_recorded['grade']?></td>
+                            <td><?php echo $row_recorded['email']?></td>
+                            <td><?php echo $row_recorded['password']?></td>
+                            <td><a class="link_view_grades" href="student_grades_view.php?id=<?php echo $row_recorded['id']?>"><?php echo $row_recorded['card']?></a></td>
+                        </tr>
                     <?php }while($row_recorded = $list_recorded->fetch_assoc()) ?>
                 </tbody>
             </table>
