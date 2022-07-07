@@ -22,6 +22,7 @@ body{
     background-color: rgb(7, 121, 197);
     padding: 10px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.384);
+    /* display: none; */
 }
 .heading_wrapper img{
     position:absolute;

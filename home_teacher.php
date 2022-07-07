@@ -3,6 +3,23 @@
     $con = connect();
     session_start();
 
+    echo $_SESSION['status'];
+
+    if(empty($_SESSION['status'])){
+
+        header("location: index.php");
+    }
+    if($_SESSION['status'] == 'admin'){
+
+        header("location: home_admin.php");
+    }
+
+    if($_SESSION['status'] == 'student'){
+        
+        header("location: home_student.php");
+    }
+
+
     $command_recorded = "SELECT * FROM `students` WHERE card='RECORDED'";
     $list_recorded = $con->query($command_recorded);
     $row_recorded = $list_recorded->fetch_assoc();
@@ -15,7 +32,7 @@
 
     if(isset($_POST['logout_btn'])){
         unset($_SESSION['status']);
-        unset($_SESSION['user_id']);
+        // unset($_SESSION['user_id']);
 
         header("location: index.php");
     }

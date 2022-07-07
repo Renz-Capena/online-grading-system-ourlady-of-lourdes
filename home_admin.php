@@ -1,6 +1,21 @@
 <?php 
     require "connection.php";
     $con = connect();
+    session_start();
+
+    if(empty($_SESSION['status'])){
+
+        header("location: index.php");
+    }
+    if($_SESSION['status'] == 'teacher'){
+
+        header("location: home_teacher.php");
+    }
+
+    if($_SESSION['status'] == 'student'){
+        
+        header("location: home_student.php");
+    }
 
     $command = "SELECT * FROM `students`";
     $list = $con->query($command);

@@ -51,6 +51,12 @@
         header("location: home_teacher.php");
     }
 
+    if(isset($_POST['logout_btn'])){
+        unset($_SESSION['status']);
+
+        header("location: index.php");
+    }
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

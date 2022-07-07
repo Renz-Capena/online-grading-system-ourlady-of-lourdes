@@ -3,6 +3,8 @@
     $con = connect();
     session_start();
 
+    // echo $_SESSION['status'];
+
     if(isset($_POST['login_btn'])){
         $email = $_POST['email'];
         $pass = $_POST['pass'];

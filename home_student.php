@@ -4,6 +4,20 @@
     session_start();
     error_reporting(0);
 
+    if(empty($_SESSION['status'])){
+
+        header("location: index.php");
+    }
+    if($_SESSION['status'] == 'teacher'){
+
+        header("location: home_teacher.php");
+    }
+
+    if($_SESSION['status'] == 'admin'){
+        
+        header("location: home_admin.php");
+    }
+
     $student_id = $_SESSION['user_id'];
 
     $command = "SELECT * FROM `grades` WHERE user_id='$student_id'";
