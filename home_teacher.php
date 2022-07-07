@@ -6,10 +6,12 @@
     $command_recorded = "SELECT * FROM `students` WHERE card='RECORDED'";
     $list_recorded = $con->query($command_recorded);
     $row_recorded = $list_recorded->fetch_assoc();
+    $numrow_recorded = $list_recorded->num_rows;
 
     $command_no_recorded = "SELECT * FROM `students` WHERE card='NO RECORD'";
     $list_no_recorded = $con->query($command_no_recorded);
     $row_no_recorded = $list_no_recorded->fetch_assoc();
+    $numrow_no_record = $list_no_recorded->num_rows;
 
     if(isset($_POST['logout_btn'])){
         unset($_SESSION['status']);
@@ -71,7 +73,7 @@
             
             header("location: home_teacher.php");
         }else{
-            echo "<script>alert('THAT ID IS ALREADY RECORDED OR NO SUCH STUDENT')</script>";
+            echo "<script>alert('THAT ID IS ALREADY RECORDED OR NO SUCH STUDENT IN THE LIST')</script>";
 
             
         }
@@ -121,17 +123,25 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php do{ ?>
-                        <tr>
-                            <td><?php echo $row_recorded['id']?></td>
-                            <td><?php echo $row_recorded['f_name']?></td>
-                            <td><?php echo $row_recorded['l_name']?></td>
-                            <td><?php echo $row_recorded['grade']?></td>
-                            <td><?php echo $row_recorded['email']?></td>
-                            <td><?php echo $row_recorded['password']?></td>
-                            <td><a class="link_view_grades" href="student_grades_view.php?id=<?php echo $row_recorded['id']?>"><?php echo $row_recorded['card']?></a></td>
-                        </tr>
-                    <?php }while($row_recorded = $list_recorded->fetch_assoc()) ?>
+                    <?php if($numrow_recorded != 0){ ?>
+                        <?php do{ ?>
+                            <tr>
+                                <td><?php echo $row_recorded['id']?></td>
+                                <td><?php echo $row_recorded['f_name']?></td>
+                                <td><?php echo $row_recorded['l_name']?></td>
+                                <td><?php echo $row_recorded['grade']?></td>
+                                <td><?php echo $row_recorded['email']?></td>
+                                <td><?php echo $row_recorded['password']?></td>
+                                <td><a class="link_view_grades" href="student_grades_view.php?id=<?php echo $row_recorded['id']?>"><?php echo $row_recorded['card']?></a></td>
+                            </tr>
+                        <?php }while($row_recorded = $list_recorded->fetch_assoc()) ?>
+                    <?php }else{ ?>
+
+                            <tr>
+                                <td style="text-align:center" colspan="7">NO STUDENT RECORDED YET!</td>
+                            </tr>
+
+                    <?php } ?>
                 </tbody>
             </table>
 
@@ -149,17 +159,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php do{ ?>
-                    <tr>
-                        <td><?php echo $row_no_recorded['id']?></td>
-                        <td><?php echo $row_no_recorded['f_name']?></td>
-                        <td><?php echo $row_no_recorded['l_name']?></td>
-                        <td><?php echo $row_no_recorded['grade']?></td>
-                        <td><?php echo $row_no_recorded['email']?></td>
-                        <td><?php echo $row_no_recorded['password']?></td>
-                        <td><?php echo $row_no_recorded['card']?></td>
-                    </tr>
-                    <?php }while($row_no_recorded = $list_no_recorded->fetch_assoc()) ?>
+                    <?php if($numrow_no_record != 0){ ?>
+                        <?php do{ ?>
+                        <tr>
+                            <td><?php echo $row_no_recorded['id']?></td>
+                            <td><?php echo $row_no_recorded['f_name']?></td>
+                            <td><?php echo $row_no_recorded['l_name']?></td>
+                            <td><?php echo $row_no_recorded['grade']?></td>
+                            <td><?php echo $row_no_recorded['email']?></td>
+                            <td><?php echo $row_no_recorded['password']?></td>
+                            <td><?php echo $row_no_recorded['card']?></td>
+                        </tr>
+                        <?php }while($row_no_recorded = $list_no_recorded->fetch_assoc()) ?>
+                    <?php }else{ ?>
+                            <tr>
+                                <td style="text-align:center" colspan="7">NO STUDENT YET!</td>
+                            </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>

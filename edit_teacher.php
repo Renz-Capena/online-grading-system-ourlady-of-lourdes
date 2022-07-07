@@ -24,6 +24,9 @@
     if(isset($_POST['delete_teacher_btn'])){
         header("location: home_admin.php");
     }
+    if(isset($_POST['delete_students_btn'])){
+        header("location: home_admin.php");
+    }
 
     $user_id = $_GET['id'];
 
@@ -55,21 +58,22 @@
     <link rel="stylesheet" href="css/home_admin.css">
 </head>
 <body>
+    <img src="img/bg.jpg" class="image_bg">
     <nav>
         <div class="ollc-logo">
             <img src="img/logo.png">
             <p>OUR LADY OF LOURDES COLLEGE OF VALENZUELA</p>
         </div>
         <div class="nav-sub">
-            <a href="home_admin.php" >TEACHERS</a>
-            <a href="home_admin.php" >STUDENT</a>
+            <a href="home_admin.php" >ADD TEACHERS</a>
+            <a href="home_admin.php" >ADD STUDENT</a>
             <form method="post">
                 <button name="logout_btn">LOGOUT</button>
             </form>
         </div>
     </nav>
 
-        <div class="student_form">
+        <!-- <div class="student_form">
 
             <h2>Create Student Record</h2>
 
@@ -133,7 +137,7 @@
                 <button class="btn" name="create_btn_teacher">CREATE</button> 
                 <a class="btn close_btn_teacher" >CLOSE</a>
             </form>
-        </div>
+        </div> -->
 
         <div class="teacher_form_update">
             <h2>Update Teacher info</h2>
@@ -156,8 +160,8 @@
                     <br>
                 </div>
 
-                <button class="btn" name="update_teacher_btn">UPDATE</button> 
-                <a class="btn" href="home_admin.php" >CLOSE</a>
+                <button class="btn_update_teacher" name="update_teacher_btn">UPDATE</button> 
+                <a class="btn_update_teacher" href="home_admin.php" >CLOSE</a>
             </form>
         </div>
 
@@ -185,7 +189,7 @@
 
                         <td class="action_row">
 
-                            <button class="btn edit_teacher">EDIT</button>
+                            <a href="home_admin.php" class="btn">EDIT</a>
 
                             <form method="post">
                                 <button class="btn" name="delete_teacher_btn">DELETE</button>
@@ -205,9 +209,11 @@
                         <th>ID</th>
                         <th>FIRST NAME</th>
                         <th>LAST NAME</th>
-                        <th>EMAIL</th>
                         <th>GRADE</th>
+                        <th>CARD STATUS</th>
+                        <th>EMAIL</th>
                         <th>PASSWORD</th>
+                        <th>ACTION</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -216,9 +222,21 @@
                         <td><?php echo $row_students['id'] ?></td>
                         <td><?php echo $row_students['f_name'] ?></td>
                         <td><?php echo $row_students['l_name'] ?></td>
-                        <td><?php echo $row_students['email'] ?></td>
                         <td><?php echo $row_students['grade'] ?></td>
+                        <td><?php echo $row_students['card'] ?></td>
+                        <td><?php echo $row_students['email'] ?></td>
                         <td><?php echo $row_students['password'] ?></td>
+                        <td class="action_row">
+
+                        <a href="home_admin.php" class="btn">EDIT</a>
+                            
+
+                            <form method="post">
+                                <button class="btn" name="delete_students_btn">DELETE</button>
+                                <input type="hidden" name="students_delete_id" value="<?php echo $row_students['id'] ?>">
+                            </form>
+
+                        </td>
                     </tr>
                     <?php }while($row_students = $list->fetch_assoc()) ?>
                 </tbody>

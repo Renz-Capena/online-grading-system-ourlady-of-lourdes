@@ -21,7 +21,7 @@
     }
 
     
-    if(isset($_POST['delete_teacher_btn'])){
+    if(isset($_POST['delete_students_btn'])){
        
         header("location: home_admin.php");
     }
@@ -38,10 +38,9 @@
         $pass = $_POST['password'];
         $grade = $_POST['grade'];
         $status = $_POST['status'];
-        $card = $_POST['card'];
         
 
-        $command = "UPDATE `students` SET `f_name`='$f_name',`l_name`='$l_name',`email`='$email',`password`='$pass',`grade`='$grade',`card`='$card' WHERE id='$user_id'";
+        $command = "UPDATE `students` SET `f_name`='$f_name',`l_name`='$l_name',`email`='$email',`password`='$pass',`grade`='$grade' WHERE id='$user_id'";
         $con->query($command);
 
         header("location: home_admin.php");
@@ -59,21 +58,23 @@
     <link rel="stylesheet" href="css/home_admin.css">
 </head>
 <body>
+    <img src="img/bg.jpg" class="image_bg">
+
     <nav>
         <div class="ollc-logo">
             <img src="img/logo.png">
             <p>OUR LADY OF LOURDES COLLEGE OF VALENZUELA</p>
         </div>
         <div class="nav-sub">
-            <a href="home_admin.php" >TEACHERS</a>
-            <a href="home_admin.php" >STUDENT</a>
+            <a href="home_admin.php" >ADD TEACHERS</a>
+            <a href="home_admin.php" >ADD STUDENT</a>
             <form method="post">
                 <button name="logout_btn">LOGOUT</button>
             </form>
         </div>
     </nav>
 
-    <div class="student_form">
+    <!-- <div class="student_form">
 
             <h2>Create Student Record</h2>
 
@@ -110,7 +111,7 @@
                 <a class="btn close_btn" >CLOSE</a>
             </form>
 
-    </div>
+    </div> -->
 
     <div class="student_form_update">
 
@@ -141,22 +142,22 @@
                         <option value="Grade 6">Grade 6</option>
                     </select>
                     <br><br>
-                    <label>CARD : </label>
+                    <!-- <label>CARD : </label>
                     <select name="card">
                         <option value="NO RECORD">NO RECORD</option>
                         <option value="RECORDED">RECORDED</option>
-                    </select>
+                    </select> -->
                      <input type="hidden" name="status" value="student">
                     <br>
         </div>
     
-    <button class="btn create_btn" name="update_btn">UPDATE</button>
-    <a class="btn" href="home_admin.php" >CLOSE</a>
+    <button class="btn_update_teacher create_btn" name="update_btn">UPDATE</button>
+    <a class="btn_update_teacher" href="home_admin.php" >CLOSE</a>
 </form>
 
 </div>
 
-        <div class="teacher_form">
+        <!-- <div class="teacher_form">
             <h2>Add Teacher</h2>
 
             <form method="post" class="teacher_signin_form">
@@ -181,7 +182,7 @@
                 <button class="btn" name="create_btn_teacher">CREATE</button> 
                 <a class="btn close_btn_teacher" >CLOSE</a>
             </form>
-        </div>
+        </div> -->
 
         <div class="table_wrapper">
             <table class="teacher_table">
@@ -207,7 +208,7 @@
 
                         <td class="action_row">
 
-                            <a href="edit_teacher.php?id=<?php echo $row_teacher['id'] ?>" class="btn">EDIT</a>
+                            <a href="home_admin.php" class="btn">EDIT</a>
 
                             <form method="post">
                                 <button class="btn" name="delete_teacher_btn">DELETE</button>
@@ -246,11 +247,11 @@
                         <td><?php echo $row_students['password'] ?></td>
                         <td class="action_row">
 
-                            <a href="edit_teacher.php?id=<?php echo $row_teacher['id'] ?>" class="btn">EDIT</a>
+                            <a href="home_admin.php" class="btn">EDIT</a>
 
                             <form method="post">
-                                <button class="btn" name="delete_teacher_btn">DELETE</button>
-                                <input type="hidden" name="teacher_delete_id" value="<?php echo $row_teacher['id'] ?>">
+                            <button class="btn" name="delete_students_btn">DELETE</button>
+                                <input type="hidden" name="students_delete_id" value="<?php echo $row_students['id'] ?>">
                             </form>
 
                         </td>

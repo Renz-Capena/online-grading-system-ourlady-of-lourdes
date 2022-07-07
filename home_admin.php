@@ -5,10 +5,12 @@
     $command = "SELECT * FROM `students`";
     $list = $con->query($command);
     $row_students = $list->fetch_assoc();
+    $numrow_student = $list->num_rows;
 
     $command_1 = "SELECT * FROM `teachers`";
     $list_1 = $con->query($command_1);
     $row_teacher = $list_1->fetch_assoc();
+    $numrow_teacher = $list_1->num_rows;
 
 
 
@@ -66,6 +68,9 @@
         $command = "DELETE FROM `students` WHERE id='$user_id'";
         $con->query($command);
 
+        $command_delete_students_grades = "DELETE FROM `grades` WHERE user_id='$user_id'";
+        $con->query($command_delete_students_grades);
+
         header("location: home_admin.php");
     }
 
@@ -80,6 +85,7 @@
     <link rel="stylesheet" href="css/home_admin.css">
 </head>
 <body>
+    <img src="img/bg.jpg" class="image_bg">
     <nav>
         <div class="ollc-logo">
             <img src="img/logo.png">
@@ -122,18 +128,13 @@
                         <option value="Grade 5">Grade 5</option>
                         <option value="Grade 6">Grade 6</option>
                     </select>
-                    <br><br>
-                    <label>CARD : </label>
-                    <select name="card">
-                        <option value="NO RECORD">NO RECORD</option>
-                        <option value="RECORDED">RECORDED</option>
-                    </select>
-                     <input type="hidden" name="status" value="student">
                     <br>
+                    <input type="hidden" value="NO RECORD" name="card">
+                     <input type="hidden" name="status" value="student">
                 </div>
                 
-                <button class="btn create_btn" name="create_btn">CREATE</button>
-                <a class="btn close_btn" >CLOSE</a>
+                <button class="btn_theme_2 create_btn" name="create_btn">CREATE</button>
+                <a class="btn_theme_2 close_btn" >CLOSE</a>
             </form>
 
         </div>
@@ -160,8 +161,8 @@
                     <br>
                 </div>
 
-                <button class="btn" name="create_btn_teacher">CREATE</button> 
-                <a class="btn close_btn_teacher" >CLOSE</a>
+                <button class="btn_theme_2" name="create_btn_teacher">CREATE</button> 
+                <a class="btn_theme_2 close_btn_teacher" >CLOSE</a>
             </form>
         </div>
 
@@ -179,6 +180,8 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php if($numrow_teacher != 0){ ?>
+
                     <?php do{ ?>
                     <tr>
                         <td><?php echo $row_teacher['id'] ?></td>
@@ -199,6 +202,14 @@
                         </td>
                     </tr>
                     <?php }while( $row_teacher = $list_1->fetch_assoc()) ?>
+
+                    <?php }else{ ?>
+                        
+                        <tr>
+                            <td colspan="6">PLEASE CREATE A TEACHER</td>
+                        </tr>
+
+                    <?php } ?>
                 </tbody>
             </table>
 
@@ -217,27 +228,36 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php do{ ?>
-                    <tr>
-                        <td><?php echo $row_students['id'] ?></td>
-                        <td><?php echo $row_students['f_name'] ?></td>
-                        <td><?php echo $row_students['l_name'] ?></td>
-                        <td><?php echo $row_students['grade'] ?></td>
-                        <td><?php echo $row_students['card'] ?></td>
-                        <td><?php echo $row_students['email'] ?></td>
-                        <td><?php echo $row_students['password'] ?></td>
-                        <td class="action_row">
 
-                            <a href="edit_students.php?id=<?php echo $row_students['id'] ?>" class="btn">EDIT</a>
+                    <?php if($numrow_student != 0){ ?>
 
-                            <form method="post">
-                                <button class="btn" name="delete_students_btn">DELETE</button>
-                                <input type="hidden" name="students_delete_id" value="<?php echo $row_students['id'] ?>">
-                            </form>
+                        <?php do{ ?>
+                        <tr>
+                            <td><?php echo $row_students['id'] ?></td>
+                            <td><?php echo $row_students['f_name'] ?></td>
+                            <td><?php echo $row_students['l_name'] ?></td>
+                            <td><?php echo $row_students['grade'] ?></td>
+                            <td><?php echo $row_students['card'] ?></td>
+                            <td><?php echo $row_students['email'] ?></td>
+                            <td><?php echo $row_students['password'] ?></td>
+                            <td class="action_row">
 
-                        </td>
-                    </tr>
-                    <?php }while($row_students = $list->fetch_assoc()) ?>
+                                <a href="edit_students.php?id=<?php echo $row_students['id'] ?>" class="btn">EDIT</a>
+
+                                <form method="post">
+                                    <button class="btn" name="delete_students_btn">DELETE</button>
+                                    <input type="hidden" name="students_delete_id" value="<?php echo $row_students['id'] ?>">
+                                </form>
+
+                            </td>
+                        </tr>
+                        <?php }while($row_students = $list->fetch_assoc()) ?>
+
+                    <?php }else{ ?>
+                        <tr>
+                            <td colspan="8">PLEASE CREATE STUDENT RECORD</td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
 
             </table>

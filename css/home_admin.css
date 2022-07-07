@@ -6,7 +6,17 @@
 }
 body{
     text-align: center;
-    background-color: rgba(0, 153, 255, 0.39);
+    background-color: rgb(0, 0, 0);
+}
+.image_bg{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(4px);
+    opacity: 0.7;
 }
 nav{
     display: flex;
@@ -90,19 +100,48 @@ nav{
     display: block;
 }
 .btn{
-    color: black;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     background: none;
     border: 1px solid;
     padding: 7px;
     border-radius: 10px;
     cursor: pointer;
-}
-.btn:hover{
-    background-color: black;
-    color:white;
     transition: 0.5s;
 }
+.btn:hover{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+.btn_update_teacher{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    background: none;
+    border: 1px solid;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.btn_update_teacher:hover{
+    color: rgb(255, 255, 255);
+    background: black;
+}
+.btn_theme_2{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    background: none;
+    border: 1px solid;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.btn_theme_2:hover{
+    color: rgb(255, 255, 255);
+    background: black;
+}
+
 /*------------------------------------------------ student_form */
 .student_form{
     position: absolute;
@@ -155,36 +194,61 @@ nav{
 .table_wrapper{
     margin-top: 120px;
 }
+thead tr{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.664);
+    font-size: 16px;
+    letter-spacing: 2px;
+}
 tbody tr{
     cursor: pointer;
-    background-color: rgba(98, 132, 161, 0.397);
+    background-color: rgba(255, 255, 255, 0.733);
     height: 50px;
     text-transform: capitalize;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+}
+tr td{
+    padding: 5px 30px;
+    /* border: 1px solid red; */
+}
+tr th{
+    /* border: 1px solid red; */
+    padding: 2px;
 }
 tbody tr:hover{
-    background-color: rgba(0, 159, 233, 0.486);
-    transition: .5s;
+    background-color: rgb(141, 141, 141);
+    transition: .7s;
 }
 caption{
+    letter-spacing: 3px;
+    font-family: Verdana;
+    color: white;
     padding: 20px;
-    font-size: 25px;
+    font-size: 23px;
     font-weight: bolder;
-    background-color: rgba(113, 188, 253, 0.842);
+    background-color: rgb(7, 121, 197);
 }
 .action_row{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin: 7px;
+    /* margin: 7px; */
+    width: 150px;
+    margin: auto;
 }
 /* --------------------------------------teacher table */
 .teacher_table{
-    width: 100%;
+    border-collapse: collapse;
+    width: 1200px;
+    margin: auto;
 }
 /* ---------------------------------------student table */
 .student_table{
+    border-collapse: collapse;
+    width: 1200px;
+    margin: auto;
     margin-top: 70px;
-    width: 100%;
 }
 /* -------------------------------------edit_home php */
 .teacher_form_update{

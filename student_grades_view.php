@@ -8,6 +8,10 @@
     $list = $con->query($command);
     $row = $list->fetch_assoc();
 
+    $command_user = "SELECT * FROM `students` WHERE id='$student_id'";
+    $list_user = $con->query($command_user);
+    $row_user = $list_user->fetch_assoc();
+
     if(isset($_POST['update_btn'])){
 
         $f_1 = $_POST['f_1'];
@@ -77,7 +81,7 @@
                     <table>
                         <thead>
                             <tr>
-                                <th></th>
+                                <th>STUDENT: <?php echo $row_user['f_name']?> <?php echo $row_user['l_name'] ?></th>
                                 <th>1st</th>
                                 <th>2nd</th>
                                 <th>3rd</th>

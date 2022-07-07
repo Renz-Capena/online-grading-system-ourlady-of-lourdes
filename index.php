@@ -22,10 +22,6 @@
         $row_2 = $list_2->fetch_assoc();
         $valid_2 = $list_2->num_rows;
 
-        // echo $valid;
-        // echo $valid_1;
-        // echo $valid_2;
-
 
         if($valid == 1){
             
