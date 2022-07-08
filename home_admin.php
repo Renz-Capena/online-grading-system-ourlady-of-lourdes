@@ -3,7 +3,7 @@
     $con = connect();
     session_start();
 
-    if(empty($_SESSION['status'])){
+    if(empty($_SESSION['status']) || $_SESSION['status'] == 'invalid'){
 
         header("location: index.php");
     }

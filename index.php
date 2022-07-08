@@ -4,6 +4,24 @@
     session_start();
 
     // echo $_SESSION['status'];
+    if(empty($_SESSION['status'])){
+
+        $_SESSION['status'] = 'invalid';
+    }
+    
+    if($_SESSION['status'] == 'admin'){
+
+        header("location: home_admin.php");
+    }
+    if($_SESSION['status'] == 'teacher'){
+
+        header("location: home_teacher.php");
+    }
+
+    if($_SESSION['status'] == 'student'){
+        
+        header("location: home_student.php");
+    }
 
     if(isset($_POST['login_btn'])){
         $email = $_POST['email'];
@@ -64,22 +82,79 @@
 <body>
     <div class="heading_wrapper">
         <img src="img/logo.png">
-        <h2>Our Lady of Lourdes College of Valenzuela online Grading System</h2>
-        <h4>by: <a href="https://www.facebook.com/renzcollin.capena/">Renz Collin D. Capeña</a></h4>
+        <div class="btn_wrapper">
+            <a class="btn about_nav" href="#about">ABOUT</a>
+            <button class="btn" id="login_btn">LOG IN</button>
+        </div>
     </div>
     <img src="img/bg.jpg" class="img_bg">
 
-    <form method="post" class="login_form">
-        <h3 class="login_head">Log in</h3>
-        <div class="container_info_login">
-            <label>Email : </label>
-            <input type="text" name="email" required>
-            <br><br>
-            <label>Pass : </label>
-            <input type="password" name="pass" required>
-        </div>
-        <button class="login" name="login_btn">LOG IN</button><br>
-    </form>
+    <div class="login_form">
+        <form method="post">
+            <h3 class="login_head">Log in</h3>
+            <div class="container_info_login">
+                <label>Email : </label>
+                <input type="text" name="email" required>
+                <br><br>
+                <label>Pass : </label>
+                <input type="password" name="pass" required>
+            </div>
+            <button class="login" name="login_btn">LOG IN</button><br>
+        </form>
+        <br>
+        <button id="close_form_btn">CLOSE</button>
+    </div>
 
+    <section class="section_1">
+        <p class="school_name">OUR LADY OF LOURDES COLLEGE OF VALENZUELA <br><br>ONLINE GRADING SYSTEM</p>
+    </section>
+
+    <section class="about" id="about">
+        <div class="column_1">
+            <img src="img/ollc.jpg" alt="">
+            <div>
+                <h1>ABOUT</h1>
+                <br>
+                <p>The Our Lady of Lourdes College is a privately owned and managed educational institution. As originally conceived by Mr. and Mrs. Alfredo Demetillo it continues to be service oriented in fulfilling its mission to serve the growing population of Valenzuela City and the neighboring communities.</p>
+            </div>
+        </div>
+        <div class="column_2">
+            <div>
+                <h2>MISSION</h2>
+                <p>The Our Lady of Lourdes College is a privately owned and managed educational institution. As originally conceived by Mr. and Mrs. Alfredo Demetillo it continues to be service oriented in fulfilling its mission to serve the growing population of Valenzuela City and the neighboring communities.</p>
+            </div>
+            <div>
+                <h2>VISION</h2>
+                <p>The Our Lady of Lourdes College is a privately owned and managed educational institution. As originally conceived by Mr. and Mrs. Alfredo Demetillo it continues to be service oriented in fulfilling its mission to serve the growing population of Valenzuela City and the neighboring communities.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section_created_by">
+        <div class="card_profile_me">
+            <img src="img/me.png" alt="">
+            <br><br>
+            <a class="href_profile" href="https://www.facebook.com/renzcollin.capena/">Renz Collin D. Capeña</a>
+            <br><br>
+            <i>Web Developer</i>
+            <div class="description_me">
+                <p>Hello I'm <b><i>Renz Colin D. Capeña</i></b> the creator of this website . I build this website fromm scratch using HTML, CSS, JAVASRIPT and PHP I hope you enjoy it. Also I build this website to enhance my knowledge about Cread, Read, Update and Delete(CRUD) in database. This website is about simple Online grading system of Our lady of Luordes College of Valenzuela. This website have a 3 user that is admin, teacher and student.
+                <br><br>
+                - The admin can create a teachers account and students account the admin also can edit and delete the accounts.
+                <br><br>
+                - The teachers account can manage the grades of the students the teacher account can create and update the grades of the students.
+                <br><br>
+                - The students account can only view the grades.</p>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>This website is for educational purpose only</p>
+    </footer>
+
+
+
+
+    <script src="js/index.js"></script>
 </body>
 </html>
