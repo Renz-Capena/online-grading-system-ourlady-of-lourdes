@@ -3,8 +3,6 @@
     $con = connect();
     session_start();
 
-    echo $_SESSION['status'];
-
     if(empty($_SESSION['status']) || $_SESSION['status'] == 'invalid'){
 
         header("location: index.php");
@@ -32,7 +30,7 @@
 
     if(isset($_POST['logout_btn'])){
         unset($_SESSION['status']);
-        // unset($_SESSION['user_id']);
+        unset($_SESSION['user_id']);
 
         header("location: index.php");
     }
@@ -95,6 +93,26 @@
             
         }
     }
+
+    // --------------------------------------teacher details\
+    $teacher_login_id = $_SESSION['user_id'];
+
+
+    $command_teacher = "SELECT * FROM `teachers` WHERE id='$teacher_login_id'";
+    $list_teacher = $con->query($command_teacher);
+    $row_teacher = $list_teacher->fetch_assoc();
+
+    // ----------------------------------------create reminders
+    if(isset($_POST['send_reminders'])){
+       $teacher_email = $_POST['teacher_email'];
+       $student_email = $_POST['student_email'];
+       $msg = $_POST['msg'];
+
+       $command_reminders = "INSERT INTO `reminders`(`student_email`, `from`, `message`) VALUES ('$student_email','$teacher_email','$msg')";
+       $con->query($command_reminders);
+
+    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -113,7 +131,7 @@
         </div>
         <div class="nav-sub">
             <a class="create_grade_btn">CREATE GRADE</a>
-            <a href="#" class="teacher_btn">REMINDERS BY ADMIN</a>
+            <a href="#" class="reminders_btn">CREATE REMINDERS</a>
             <form method="post">
                 <button name="logout_btn">LOGOUT</button>
             </form>
@@ -267,6 +285,21 @@
             </form>
             
         </div>
+    </div>
+
+    <div class="form_reminders">
+        <form method="post">
+            <input class="sample" type="hidden" name="teacher_email" value="<?php echo $row_teacher['email_teacher'] ?>">
+            <label>TO : </label>
+            <input class="student_email" type="text" name="student_email">
+            <br><br>
+            <label>Message :</label>
+            <br>
+            <input class="msg" type="text" name="msg">
+            <br><br>
+            <button class="btn_reminders" name="send_reminders">SEND</button>
+            <button class="btn_reminders close_reminder">CLOSE</button>
+        </form>
     </div>
 
     <script src="js/home_teacher.js"></script>

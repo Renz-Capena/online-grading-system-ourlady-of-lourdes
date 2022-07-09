@@ -115,6 +115,7 @@ table{
     background-color: whitesmoke;
     border-collapse: collapse;
     transition: 2s;
+    text-align: center;
 }
 caption{
     font-family: Verdana;
@@ -141,8 +142,8 @@ tbody tr{
     cursor: pointer;
 }
 tbody tr:hover{
-    background-color: rgba(0, 255, 255, 0.623);
-    transition: 0.5s;
+    background-color: rgb(141, 141, 141);
+    transition: .7s;
 }
 .link_view_grades{
     text-decoration: none;
@@ -272,6 +273,52 @@ form input{
     width: 30px;
     margin-right: 20px;
     margin: 5px;
+}
+/*----------------------------------------------- form reminders */
+.form_reminders{
+    background-color: rgb(206, 232, 255);
+    width: 400px;
+    position: absolute;
+    z-index: 2;
+    top:0;
+    margin-top: 200px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px black;
+    color: rgb(0, 0, 0);
+    transition: 0.5s;
+    opacity: 0;
+    z-index: -1;
+}
+.student_email{
+    margin-top: 20px;
+    width: 300px;
+    height: 35px;
+    border-radius: 10px;
+    outline: none;
+}
+.msg{
+    height: 100px;
+    width: 350px;
+    border-radius: 10px;
+    outline: none;
+}
+.btn_reminders{
+    height: 40px;
+    width: 60px;
+    margin: 10px;
+    background: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.btn_reminders:hover{
+    background-color: black;
+    color: whitesmoke;
 }
 
 

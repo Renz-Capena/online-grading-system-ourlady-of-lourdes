@@ -40,4 +40,18 @@ close_btn_grade.addEventListener('click',()=>{
     form_grade_wrapper.style.opacity = "0";
     form_grade_wrapper.style.zIndex = "-2";
 })
+//-------------------------------------------------------- reminders form
+let form_reminders = document.querySelector('.form_reminders');
+let close_reminder = document.querySelector('.close_reminder');
+let reminders_btn = document.querySelector('.reminders_btn');
+
+reminders_btn.addEventListener('click',()=>{
+    form_reminders.style.zIndex = "2";
+    form_reminders.style.opacity = "1";
+})
+
+close_reminder.addEventListener('click',()=>{
+    form_reminders.style.zIndex = "-1";
+    form_reminders.style.opacity = "0";
+})
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2022 at 11:19 AM
+-- Generation Time: Jul 09, 2022 at 05:27 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.12
 
@@ -61,7 +61,28 @@ CREATE TABLE `grades` (
 --
 
 INSERT INTO `grades` (`id`, `user_id`, `f_1`, `f_2`, `f_3`, `f_4`, `e_1`, `e_2`, `e_3`, `e_4`, `s_1`, `s_2`, `s_3`, `s_4`, `m_1`, `m_2`, `m_3`, `m_4`, `h_1`, `h_2`, `h_3`, `h_4`, `p_1`, `p_2`, `p_3`, `p_4`) VALUES
-(4, '2', '75', 0, 0, 0, 75, 0, 0, 0, 75, 0, 0, 0, 75, 0, 0, 0, 75, 0, 0, 0, 75, 0, 0, 0);
+(20, '78', '78', 0, 0, 0, 80, 0, 0, 0, 91, 0, 0, 0, 76, 0, 0, 0, 85, 0, 0, 0, 84, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reminders`
+--
+
+CREATE TABLE `reminders` (
+  `id` int(11) NOT NULL,
+  `student_email` varchar(150) NOT NULL,
+  `from` varchar(150) NOT NULL,
+  `message` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `reminders`
+--
+
+INSERT INTO `reminders` (`id`, `student_email`, `from`, `message`) VALUES
+(3, 'renz@yahoo.com', 'teacher@yahoo.com', '70 grade mo'),
+(4, 'Cart@Yahoo.Com', 'teacher@yahoo.com', 'Nice student');
 
 -- --------------------------------------------------------
 
@@ -85,57 +106,7 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`id`, `f_name`, `l_name`, `email`, `password`, `grade`, `status`, `card`) VALUES
-(1, 'Susanna', 'Tampin', 'stampin0@shinystat.com', 'KDlfzUf6RM4a', 'Grade 3', 'student', 'RECORDED'),
-(2, 'Mischa', 'Ulrik', 'mulrik1@psu.edu', 'SyJd5gM', 'Grade 2', 'student', 'RECORDED'),
-(3, 'Rowland', 'Linn', 'rlinn2@ovh.net', 'oo5bd7VUG', 'Grade 1', 'student', 'NO RECORD'),
-(4, 'Calley', 'Christophe', 'cchristophe3@bloglovin.com', 'rwHIrs8ypgYV', 'Grade 3', 'student', 'RECORDED'),
-(5, 'Tim', 'Catonne', 'tcatonne4@java.com', 'mSVx5IAlEF4m', 'Grade 2', 'student', 'NO RECORD'),
-(6, 'Finlay', 'Rishman', 'frishman5@nsw.gov.au', 'BJrQruKft4', 'Grade 4', 'student', 'NO RECORD'),
-(7, 'Nestor', 'Brownbridge', 'nbrownbridge6@ameblo.jp', 'FiWtH9dxherG', 'Grade 1', 'student', 'NO RECORD'),
-(8, 'Nora', 'Mariault', 'nmariault7@cbslocal.com', '2mJZHUc', 'Grade 1', 'student', 'NO RECORD'),
-(9, 'Maureene', 'Herrero', 'mherrero8@mozilla.com', 'dXPhmaLd', 'Grade 1', 'student', 'NO RECORD'),
-(10, 'Rabbi', 'Itter', 'ritter9@wix.com', 'Xmtaw7n', 'Grade 6', 'student', 'NO RECORD'),
-(11, 'Boris', 'Baal', 'bbaala@comcast.net', 'dAPyfHxuDS21', 'Grade 3', 'student', 'NO RECORD'),
-(12, 'Gilemette', 'Kevis', 'gkevisb@imgur.com', 'xA3z3rrVTF', 'Grade 1', 'student', 'NO RECORD'),
-(13, 'Freddi', 'McKinney', 'fmckinneyc@posterous.com', 'cRocIc89Sw', 'Grade 3', 'student', 'RECORDED'),
-(14, 'Kassia', 'Dionisi', 'kdionisid@ycombinator.com', 'O9E75eyqXDB', 'Grade 3', 'student', 'RECORDED'),
-(15, 'Freedman', 'Spriggen', 'fspriggene@si.edu', 'DrxEksy1', 'Grade 4', 'student', 'NO RECORD'),
-(16, 'Nataline', 'Bangle', 'nbanglef@so-net.ne.jp', '80kRqi6j', 'Grade 3', 'student', 'NO RECORD'),
-(17, 'Allyson', 'Haseman', 'ahasemang@ow.ly', '55Y3bDK1oF', 'Grade 2', 'student', 'RECORDED'),
-(18, 'Maxine', 'Kirkebye', 'mkirkebyeh@census.gov', 'Zmzra17el', 'Grade 4', 'student', 'RECORDED'),
-(19, 'Baron', 'Dunsmuir', 'bdunsmuiri@npr.org', 'M7SDsL6T', 'Grade 5', 'student', 'NO RECORD'),
-(20, 'Glenna', 'Kensitt', 'gkensittj@archive.org', '4rUC6zbgyVh', 'Grade 4', 'student', 'RECORDED'),
-(21, 'Nananne', 'Stuehmeyer', 'nstuehmeyerk@nhs.uk', '6W5zEBsnA', 'Grade 2', 'student', 'RECORDED'),
-(22, 'Tirrell', 'Bagworth', 'tbagworthl@symantec.com', 'RBO9q6', 'Grade 1', 'student', 'NO RECORD'),
-(23, 'Leoline', 'Dozdill', 'ldozdillm@businessinsider.com', 'yX0Xgu5NjTOr', 'Grade 3', 'student', 'RECORDED'),
-(24, 'Leeland', 'Offener', 'loffenern@house.gov', 'iuZfMitj', 'Grade 1', 'student', 'NO RECORD'),
-(25, 'Ameline', 'Geertsen', 'ageertseno@hao123.com', 'x3q0BY', 'Grade 4', 'student', 'NO RECORD'),
-(26, 'Sara-ann', 'Sumshon', 'ssumshonp@google.cn', 'WPBDbwuh5FD0', 'Grade 4', 'student', 'RECORDED'),
-(27, 'Lorenzo', 'Danton', 'ldantonq@linkedin.com', 'djv2lp', 'Grade 1', 'student', 'RECORDED'),
-(28, 'Avie', 'Tiddeman', 'atiddemanr@technorati.com', 'rINxzTg', 'Grade 3', 'student', 'NO RECORD'),
-(29, 'Caspar', 'Vallow', 'cvallows@illinois.edu', 'jp06cTiD', 'Grade 1', 'student', 'NO RECORD'),
-(30, 'Aili', 'Jakaway', 'ajakawayt@smugmug.com', 'S5MxbQTX3UAP', 'Grade 4', 'student', 'NO RECORD'),
-(31, 'Xymenes', 'Boyer', 'xboyeru@umich.edu', 'ER44KZwuXRBD', 'Grade 6', 'student', 'NO RECORD'),
-(32, 'Mikel', 'Fowlie', 'mfowliev@histats.com', 'sMPLRwb26', 'Grade 3', 'student', 'RECORDED'),
-(33, 'Reginauld', 'Cornu', 'rcornuw@uiuc.edu', '8rlkTZpo', 'Grade 5', 'student', 'RECORDED'),
-(34, 'Gretal', 'Sidlow', 'gsidlowx@baidu.com', 'HjmNFKRW', 'Grade 1', 'student', 'NO RECORD'),
-(35, 'Elva', 'Alentyev', 'ealentyevy@fema.gov', 'vWAVCU82VD', 'Grade 3', 'student', 'NO RECORD'),
-(36, 'Cleve', 'Roswarn', 'croswarnz@geocities.com', '9Bs7Qh', 'Grade 1', 'student', 'RECORDED'),
-(37, 'Aimee', 'Doe', 'adoe10@nps.gov', 'JAqUGA', 'Grade 5', 'student', 'RECORDED'),
-(38, 'Sasha', 'De Bischop', 'sdebischop11@sourceforge.net', 'nlt7Odeiv9gS', 'Grade 1', 'student', 'NO RECORD'),
-(39, 'Barby', 'Ronchka', 'bronchka12@sitemeter.com', 'MfGdwYM0W', 'Grade 4', 'student', 'NO RECORD'),
-(40, 'Catha', 'Jurick', 'cjurick13@delicious.com', 'U2W1sZ', 'Grade 3', 'student', 'NO RECORD'),
-(41, 'Alvy', 'Kruse', 'akruse14@yahoo.co.jp', 'ArYQwf', 'Grade 1', 'student', 'NO RECORD'),
-(42, 'Katie', 'Tinson', 'ktinson15@berkeley.edu', 'KvKOHvkrKqN', 'Grade 5', 'student', 'RECORDED'),
-(43, 'Nikki', 'Pinnion', 'npinnion16@google.nl', 'J7QufUeG', 'Grade 5', 'student', 'NO RECORD'),
-(44, 'Hillier', 'Pullar', 'hpullar17@ycombinator.com', 'Xuf3CQF', 'Grade 6', 'student', 'NO RECORD'),
-(45, 'Maible', 'Nodin', 'mnodin18@trellian.com', 'QjKBld5O', 'Grade 4', 'student', 'RECORDED'),
-(46, 'Tamra', 'Thing', 'tthing19@nba.com', 'xPGMBu', 'Grade 5', 'student', 'NO RECORD'),
-(47, 'Libbie', 'Haslum', 'lhaslum1a@reverbnation.com', '9j6Zl0HN9K4w', 'Grade 6', 'student', 'RECORDED'),
-(48, 'Lavinie', 'Ennever', 'lennever1b@list-manage.com', 'EPoXcRh7F9', 'Grade 5', 'student', 'RECORDED'),
-(49, 'Davidson', 'Bessell', 'dbessell1c@usda.gov', 'tyRbZDx', 'Grade 2', 'student', 'NO RECORD'),
-(50, 'Arty', 'Cann', 'acann1d@drupal.org', 'RQVPOOdDVx0', 'Grade 1', 'student', 'NO RECORD'),
-(52, 'John', 'Put', 'student@yahoo.com', 'student', 'Grade 1', 'student', 'RECORDED');
+(78, 'cart', 'zy', 'cart@yahoo.com', 'cart', 'Grade 2', 'student', 'RECORDED');
 
 -- --------------------------------------------------------
 
@@ -157,9 +128,8 @@ CREATE TABLE `teachers` (
 --
 
 INSERT INTO `teachers` (`id`, `f_name`, `l_name`, `email_teacher`, `password_teacher`, `status`) VALUES
-(34, 'David', 'Sample', 'teacher@yahoo.com', 'teacher', 'teacher'),
-(37, 'James', 'dela cruz', 'juan@yahoo.com', 'juan1234', 'teacher'),
-(38, 'kahit', 'ano', 'kahitano@yahoo.com', 'kahitano', 'teacher');
+(48, 'felix', 'delacruz', 'felix@yahoo.com', 'felix123', 'teacher'),
+(49, 'saitama', 'jun', 'teacher@yahoo.com', 'teacher', 'teacher');
 
 -- --------------------------------------------------------
 
@@ -192,6 +162,12 @@ ALTER TABLE `grades`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `reminders`
+--
+ALTER TABLE `reminders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `students`
 --
 ALTER TABLE `students`
@@ -217,19 +193,25 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `grades`
 --
 ALTER TABLE `grades`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `reminders`
+--
+ALTER TABLE `reminders`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 
 --
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `users`

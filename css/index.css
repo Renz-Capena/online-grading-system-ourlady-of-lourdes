@@ -88,7 +88,7 @@ body{
 /* ---------------------------------------------button */
 .btn_wrapper{
     /* border: 1px solid red; */
-    width: 250px;
+    width: 500px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -150,25 +150,31 @@ body{
 }
 /* ----------------------------------------------section about */
 .about{
-    background-color: rgb(5, 145, 238);
+    background-color: rgb(146, 211, 255);
     margin-top: 470px;
-    color: white;
-    /* border: 1px solid; */
+    color: rgb(0, 0, 0);
     padding: 20px;
 }
 /* ----------------column_1 */
 .column_1{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 900px;
     margin: auto;
-}
-.column_1 img{
-    width: 500px;
+    margin-top: 55px;
+    box-shadow: 5px 5px 10px black;
+    background-color: rgb(7, 121, 197);
+    padding: 20px 10px;
     border-radius: 10px;
 }
+.column_1 img{
+    width: 400px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px;
+}
 .column_1 div{
+    color: white;
     width: 350px;
     font-size: 20px;
     line-height: 1.5;
@@ -180,12 +186,12 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 100px;
+    margin-top: 20px;
     padding: 50px 0px;
 }
 .column_2 div{
-    color: black;
-    background-color: rgb(119, 212, 255);
+    color: rgb(255, 255, 255);
+    background-color: rgb(7, 121, 197);
     padding: 20px;
     width: 350px;
     border-radius: 10px;

@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    font-family: courier;
+}
+body{
+    background-color: black;
+    text-align: center;
+}
+.img_bg{
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(4px);
+    opacity: 0.5;
+}
+.heading_wrapper{
+    background-color: rgb(7, 121, 197);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.384);
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top:0;
+    width: 100%;
+    /* display: none; */
+}
+.heading_wrapper img{
+    margin-left: 20%;
+    width: 60px;
+    height: 60px;
+}
+/*------------------------------------------------------ form */
+.login_form{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    margin-top: 10%;
+    box-shadow: 5px 5px 7px black;
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(233, 233, 233);
+    transition: 0.5s;
+    opacity: 0;
+    z-index: -1;
+    position: fixed;
+}
+.login_form input{
+    color: rgb(0, 0, 0);
+    height: 40px;
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    outline: none;
+    text-align: center;
+    background: none;
+}
+.login_head{
+    padding-top: 50px;
+}
+.container_info_login{
+    padding-top: 40px;
+}
+.login{
+    background-color: rgb(14, 91, 163);
+    border: 1px solid;
+    border: none;
+    color: white;
+    margin-top: 70px;
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.login:hover{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    color:black;
+}
+#close_form_btn{
+    background-color: rgb(14, 91, 163);
+    border: 1px solid;
+    border: none;
+    color: white;
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#close_form_btn:hover{
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    color:black;
+    transition: 0.5s;
+}
+/*--------------------------------------------------- button */
+.btn_wrapper{
+    /* border: 1px solid red; */
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 20%;
+}
+ .btn{
+    background: none;
+    cursor: pointer;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    margin: 0px 20px;
+    padding: 10px;
+    line-height: 2;
+    border: none;
+    /* border: 1px solid; */
+}
+.btn::after{  
+    content: '';
+    height: 2px;
+    width: 0%;
+    background-color: rgb(255, 255, 255);
+    display: block;
+    transition: .5s ease-in-out;
+}
+.btn:hover::after{
+    content: '';
+    height: 2px;
+    width: 100%;
+    display: block;
+}
+/* ------------------------------------------------------section */
+section{
+    margin-top: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+/*-------------------------------------------------------- table */
+table{
+    margin-top: 100px;
+    box-shadow: 4px 4px 10px;
+    background-color: whitesmoke;
+    border-collapse: collapse;
+    text-align: center;
+    width: 40%;
+}
+caption{
+    font-family: Verdana;
+    color: white;
+    padding: 18px;
+    font-size: 23px;
+    font-weight: bolder;
+    background-color: rgb(7, 121, 197);
+}
+thead th{
+    /* padding: 10px 2px;*/
+    border: 1px solid black;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.664);
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+tbody td{
+    padding: 20px;
+    border: 1px solid;
+}
+tbody tr{
+    background-color: rgb(243, 243, 243);
+    cursor: pointer;
+}
+tbody tr:hover{
+    background-color: rgb(141, 141, 141);
+    transition: .7s;
+}

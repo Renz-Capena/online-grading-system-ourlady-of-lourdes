@@ -44,7 +44,8 @@
 
 
         if($valid == 1){
-            
+
+            $_SESSION['user_id'] = $row['id'];
             $_SESSION['status'] = $row['status'];
             header("location: home_teacher.php");
             
@@ -83,6 +84,8 @@
     <div class="heading_wrapper">
         <img src="img/logo.png">
         <div class="btn_wrapper">
+            <a class="btn" href="index.php">HOME</a>
+            <a class="btn" href="users_list.php">USERS</a>
             <a class="btn about_nav" href="#about">ABOUT</a>
             <button class="btn" id="login_btn">LOG IN</button>
         </div>

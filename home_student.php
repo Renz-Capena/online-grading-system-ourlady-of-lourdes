@@ -31,8 +31,6 @@
 
 
 
-
-
     if(isset($_POST['logout_btn'])){
         unset($_SESSION['status']);
         unset($_SESSION['user_id']);
@@ -40,7 +38,17 @@
         header("location: index.php");
     }
 
+    // -----------------------------------------------------reminders
 
+    $command_user_details = "SELECT * FROM `students` WHERE id='$student_id'";
+    $list_user_details = $con->query($command_user_details);
+    $row_user_details = $list_user_details->fetch_assoc();
+
+    $user_email = $row_user_details['email'];
+
+    $command_reminders = "SELECT * FROM `reminders` WHERE student_email='$user_email'";
+    $list_reminders = $con->query($command_reminders);
+    $row_reminders = $list_reminders->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,9 +66,9 @@
             <p>OUR LADY OF LOURDES COLLEGE OF VALENZUELA</p>
         </div>
         <div class="nav-sub">
-            <a href="#">TEACHER REMINDERS</a>
+            <button class="teacher_reminder_btn">TEACHERS REMINDERS</button>
             <form method="post">
-                <button name="logout_btn">LOGOUT</button>
+                <button name="logout_btn" class="logout_btn">LOGOUT</button>
             </form>
         </div>
     </nav>
@@ -129,8 +137,31 @@
             </tbody>
         </table>
     </section>
+
+    <div class="reminders_wrapper">
+        <table class="reminders_table">
+            <thead>
+                <tr>
+                    <th>FROM</th>
+                    <th>MESSAGE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php do{ ?>
+                    <tr class="reminders_td">
+                        <td class="td_border"><?php echo $row_reminders['from'] ?></td>
+                        <td class="td_border"><?php echo $row_reminders['message'] ?></td>
+                    </tr>
+                <?php }while($row_reminders = $list_reminders->fetch_assoc()) ?>
+                <tr class="reminders_td">
+                    <td colspan="2"><button class="close_reminder_btn">CLOSE</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
     
 
-    
+    <script src="js/home_student.js"></script>
 </body>
 </html>
