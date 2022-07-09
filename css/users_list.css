@@ -1,6 +1,7 @@
 *{
     margin: 0;
     font-family: courier;
+    transition: 0.9s;
 }
 body{
     background-color: black;
@@ -42,7 +43,6 @@ body{
     width: 400px;
     height: 400px;
     margin: auto;
-    margin-top: 10%;
     box-shadow: 5px 5px 7px black;
     border-radius: 20px;
     color: rgb(0, 0, 0);
@@ -103,7 +103,6 @@ body{
 }
 /*--------------------------------------------------- button */
 .btn_wrapper{
-    /* border: 1px solid red; */
     width: 500px;
     display: flex;
     align-items: center;
@@ -120,27 +119,19 @@ body{
     padding: 10px;
     line-height: 2;
     border: none;
-    /* border: 1px solid; */
 }
-.btn::after{  
-    content: '';
-    height: 2px;
-    width: 0%;
-    background-color: rgb(255, 255, 255);
-    display: block;
-    transition: .5s ease-in-out;
-}
-.btn:hover::after{
-    content: '';
-    height: 2px;
-    width: 100%;
-    display: block;
+.burger_menu{
+    display: none;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px black;
+    position: absolute;
+    right: 0;
+    margin-right: 5%;
 }
 /* ------------------------------------------------------section */
 section{
     margin-top: 90px;
     display: flex;
-    align-items: center;
     justify-content: space-around;
 }
 /*-------------------------------------------------------- table */
@@ -150,7 +141,6 @@ table{
     background-color: whitesmoke;
     border-collapse: collapse;
     text-align: center;
-    width: 40%;
 }
 caption{
     font-family: Verdana;
@@ -159,9 +149,9 @@ caption{
     font-size: 23px;
     font-weight: bolder;
     background-color: rgb(7, 121, 197);
+    box-shadow: 4px 0px 5px black;
 }
 thead th{
-    /* padding: 10px 2px;*/
     border: 1px solid black;
     color: white;
     background-color: rgba(0, 0, 0, 0.664);
@@ -179,4 +169,74 @@ tbody tr{
 tbody tr:hover{
     background-color: rgb(141, 141, 141);
     transition: .7s;
+}
+
+
+
+
+
+
+
+/*---------------------------------------------- responsive */
+@media (max-width: 900px){
+    .btn_wrapper{
+        transform: translateX(200%);
+        display: block;
+        background-color: rgb(47, 126, 201);
+        width: 100%;
+        position: absolute;
+        top: 0;
+        margin-top: 70px;
+        left: 0;
+        right: 0;
+        padding: 10px 0px;
+        border-top: 2px solid rgb(52, 183, 243);
+    }
+    .btn_wrapper_1{
+        transform: translateX(0%);
+    }
+    .btn{
+        margin: 0px 20px;
+    }
+    .burger_menu{
+        display: block;
+    }
+    .heading_wrapper img{
+        margin-left: 5%;
+    }
+    .login_form{
+        margin-top: 200px;
+    }
+    /* --------------------------------------------section */
+    section{
+        display: block;
+    }
+    table{
+        margin: auto;
+        margin-top: 75px;
+        width: 90%;
+    }
+}
+
+@media (min-width:901px) and (max-width:5000px){
+    .btn::after{  
+        content: '';
+        height: 2px;
+        width: 0%;
+        background-color: rgb(255, 255, 255);
+        display: block;
+        transition: .5s ease-in-out;
+    }
+    .btn:hover::after{
+        content: '';
+        height: 2px;
+        width: 100%;
+        display: block;
+    }
+    .login_form{
+        margin-top: 10%;
+    }
+    table{
+        width: 45%;
+    }
 }

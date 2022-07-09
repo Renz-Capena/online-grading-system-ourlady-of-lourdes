@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    transition: 0.9s;
     /* border: 1px solid red; */
 }
 body{
@@ -40,16 +41,17 @@ body{
     top:0;
     left: 0;
     right: 0;
-    width: 400px;
+    /* width: 400px; */
     height: 400px;
     margin: auto;
-    margin-top: 10%;
+    /* margin-top: 10%; */
     box-shadow: 5px 5px 7px black;
     border-radius: 20px;
     color: rgb(0, 0, 0);
     background-color: rgb(233, 233, 233);
     transition: 0.5s;
     opacity: 0;
+    z-index: -2;
     position: fixed;
 }
 .login_form input{
@@ -73,12 +75,10 @@ body{
     border: 1px solid;
     border: none;
     color: white;
-    margin-top: 70px;
-    width: 300px;
+    /* width: 300px; */
     height: 40px;
     border-radius: 10px;
     cursor: pointer;
-    transition: 0.5s;
 }
 .login:hover{
     background-color: rgb(255, 255, 255);
@@ -88,11 +88,19 @@ body{
 /* ---------------------------------------------button */
 .btn_wrapper{
     /* border: 1px solid red; */
-    width: 500px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     margin-right: 20%;
+}
+.burger_menu{
+    display: none;
+    /* border: 1px solid rgb(128, 0, 0); */
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px black;
+    position: absolute;
+    right: 0;
+    margin-right: 5%;
 }
  .btn{
     background: none;
@@ -106,26 +114,12 @@ body{
     border: none;
     /* border: 1px solid; */
 }
-.btn::after{  
-    content: '';
-    height: 2px;
-    width: 0%;
-    background-color: rgb(255, 255, 255);
-    display: block;
-    transition: .5s ease-in-out;
-}
-.btn:hover::after{
-    content: '';
-    height: 2px;
-    width: 100%;
-    display: block;
-}
 #close_form_btn{
     background-color: rgb(14, 91, 163);
     border: 1px solid;
     border: none;
     color: white;
-    width: 300px;
+    /* width: 300px; */
     height: 40px;
     border-radius: 10px;
     cursor: pointer;
@@ -134,7 +128,6 @@ body{
     background-color: rgb(255, 255, 255);
     border: 1px solid black;
     color:black;
-    transition: 0.5s;
 }
 /* -----------------------------------------------section 1 */
 .section_1{
@@ -142,7 +135,7 @@ body{
     color: rgb(231, 231, 231);
     width: 60%;
     margin: auto;
-    margin-top: 15%;
+    /* border: 1px solid; */
 }
 .school_name{
     font-size: 45px;
@@ -151,7 +144,6 @@ body{
 /* ----------------------------------------------section about */
 .about{
     background-color: rgb(146, 211, 255);
-    margin-top: 470px;
     color: rgb(0, 0, 0);
     padding: 20px;
 }
@@ -167,6 +159,7 @@ body{
     background-color: rgb(7, 121, 197);
     padding: 20px 10px;
     border-radius: 10px;
+    /* border: 1px solid; */
 }
 .column_1 img{
     width: 400px;
@@ -178,6 +171,7 @@ body{
     width: 350px;
     font-size: 20px;
     line-height: 1.5;
+    /* border: 1px solid red; */
 }
 /* -----------------column_2 */
 .column_2{
@@ -188,6 +182,7 @@ body{
     justify-content: space-between;
     margin-top: 20px;
     padding: 50px 0px;
+    /* border: 1px solid red; */
 }
 .column_2 div{
     color: rgb(255, 255, 255);
@@ -214,7 +209,7 @@ body{
     box-shadow: 5px 5px 10px;
     border-radius: 10px;
     width: 900px;
-    height: 750px;
+    /* height: 750px; */
     margin: auto;
     padding: 20px;
 }
@@ -238,7 +233,7 @@ body{
     width: 700px;
     margin: auto;
     margin-top: 20px;
-    line-height: 2;
+    /* line-height: 2; */
 }
 /* ------------------------------------------------------footer */
 footer{
@@ -248,4 +243,161 @@ footer{
 footer p{
     color: white;
     padding-top: 10px;
+}
+
+
+
+
+
+/* ------------------------------------------------------RESPONSIVE  */
+@media (min-width:901px) and (max-width:5000px){
+    .btn::after{  
+        content: '';
+        height: 2px;
+        width: 0%;
+        background-color: rgb(255, 255, 255);
+        display: block;
+        transition: .5s ease-in-out;
+    }
+    .btn:hover::after{
+        content: '';
+        height: 2px;
+        width: 100%;
+        display: block;
+    }
+    .section_1{
+        margin-top: 15%;
+    }
+    .about{
+        margin-top: 470px;
+    }
+    .login_form{
+        margin-top: 10%;
+        width: 400px;
+    }
+    .login{
+        margin-top: 50px;
+        width: 300px;
+    }
+    #close_form_btn{
+        width: 300px;
+    }
+    .description_me{
+        line-height: 2px;
+        line-height: 2;
+    }
+}
+@media (max-width: 900px){
+    .btn_wrapper{
+        transform: translateX(200%);
+        display: block;
+        background-color: rgb(47, 126, 201);
+        width: 100%;
+        position: absolute;
+        top: 0;
+        margin-top: 70px;
+        left: 0;
+        right: 0;
+        padding: 10px 0px;
+        border-top: 2px solid rgb(52, 183, 243);
+    }
+    .btn_wrapper_1{
+        transform: translateX(0%);
+    }
+    .btn{
+        margin: 0px 20px;
+    }
+    .burger_menu{
+        display: block;
+    }
+    .heading_wrapper img{
+        margin-left: 5%;
+    }
+    /* ----------------------------------section 1 */
+    .section_1{
+        margin-top: 250px;
+    }
+    .school_name{
+        font-size: 38px;
+        font-weight: bolder;
+    }
+    /*----------------------------------- about */
+    .about{
+        margin-top: 400px;
+    }
+    .column_1 img{
+        width: 90%;
+    }
+    .column_1{
+        display: block;
+        width: 85%;
+    }
+    .column_1 div{
+        margin: auto;
+        margin-top: 20px;
+        width: 70%;
+    }
+    .column_2{
+        display: block;
+        width: 85%;
+    }
+    .column_2 div{
+        width: 90%;
+        margin: auto;
+        margin-top: 60px;
+    }
+    /* -----------------------------------section me */
+    .section_created_by{
+        padding: 50px 0px;
+        background: rgb(201, 201, 201);
+    }
+    .card_profile_me{
+        background-color: rgb(241, 241, 241);
+        box-shadow: 5px 5px 10px;
+        border-radius: 10px;
+        width: 80%;
+        /* height: 890px; */
+        /* margin: auto; */
+        /* padding: 20px; */
+    }
+    .card_profile_me img{
+        width: 150px;
+        border: 6px solid rgb(48, 60, 95);
+        border-radius: 50%;
+    }
+    .href_profile{
+        font-size: 20px;
+        font-weight: bolder;
+        color: black;
+        letter-spacing: 2px;
+        cursor: pointer;
+        text-decoration: none;
+        border-bottom: 1px solid;
+    }
+    .description_me{
+        text-align: left;
+        /* border: 1px solid red; */
+        width: 90%;
+        margin: auto;
+        margin-top: 20px;
+        line-height: 2;
+    }
+    /* ---------------------------------------login form */
+    .login_form{
+        margin-top: 200px;
+        width: 90%;
+    }
+    .login{
+        margin-top: 50px;
+        width: 80%;
+    }
+    #close_form_btn{
+        width: 80%;
+    }
+    /*------------------------------------------- footer */
+    footer{
+        font-size: 14px;
+        padding: 0;
+        height: 50px;
+    }
 }

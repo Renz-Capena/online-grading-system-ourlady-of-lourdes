@@ -10,10 +10,17 @@ login_btn.addEventListener('click',()=>{
 
 close_form_btn.addEventListener('click',()=>{
     login_form.style.opacity = '0';
-    login_form.style.zIndex = '-1';
+    login_form.style.zIndex = '-2';
 })
 
 about_nav.addEventListener('click',()=>{
     login_form.style.opacity = '0';
-    login_form.style.zIndex = '-1';
+    login_form.style.zIndex = '-2';
+})
+//-------------------------------------------------- RESPONSIVE
+let burger_menu = document.querySelector('.burger_menu');
+let btn_wrapper = document.querySelector('.btn_wrapper');
+
+burger_menu.addEventListener('click',()=>{
+    btn_wrapper.classList.toggle('btn_wrapper_1');
 })
