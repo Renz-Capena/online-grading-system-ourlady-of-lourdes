@@ -29,18 +29,11 @@ close_btn.addEventListener('click',()=>{
     student_form.style.display = "none";
 })
 
-// // -------------------------------------------------edit btn teacher
-// let edit_teacher = document.querySelectorAll('.edit_teacher');
-// let close_btn_teacher_update = document.querySelector('.close_btn_teacher_update');
-// let teacher_form_update = document.querySelector('.teacher_form_update');
-// let user_id_edit = document.querySelector('.user_id_edit');
+//--------------------------------------- RESPONSIVE
+let burger_menu = document.querySelector('.burger_menu');
+let  nav_sub = document.querySelector('.nav-sub');
 
-// edit_teacher.forEach(btn => {
-//     btn.addEventListener('click',()=>{
-//         teacher_form_update.style.display = 'block';
-//     })
-// });
+burger_menu.addEventListener('click',()=>{
+    nav_sub.classList.toggle('nav-sub_1');
+})
 
-// close_btn_teacher_update.addEventListener('click',()=>{
-//     teacher_form_update.style.display = "none";
-// })

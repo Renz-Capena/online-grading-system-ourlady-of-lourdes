@@ -63,6 +63,7 @@
     <nav>
         <div class="ollc-logo">
             <img src="img/logo.png">
+            <img src="img/burger.png" class="burger_menu">
             <p>OUR LADY OF LOURDES COLLEGE OF VALENZUELA</p>
         </div>
         <div class="nav-sub">

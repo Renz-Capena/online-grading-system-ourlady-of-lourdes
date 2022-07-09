@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: courier;
+    transition: 0.9s;
     /* border: 1px solid red; */
 }
 body{
@@ -48,6 +49,16 @@ nav{
 .nav-sub{
     margin-right: 50px;
     display: flex;
+    /* border: 1px solid red; */
+}
+.burger_menu{
+    display: none;
+    /* border: 1px solid rgb(128, 0, 0); */
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px black;
+    position: absolute;
+    right: 0;
+    margin-right: 5%;
 }
 .nav-sub a{
     letter-spacing: 2px;
@@ -57,20 +68,7 @@ nav{
     padding: 10px;
     width: 150px;
     line-height: 2;
-}
-.nav-sub a::after{  
-    content: '';
-    height: 2px;
-    width: 0%;
-    background-color: rgb(255, 255, 255);
-    display: block;
-    transition: .5s ease-in-out;
-}
-.nav-sub a:hover::after{
-    content: '';
-    height: 2px;
-    width: 100%;
-    display: block;
+    /* border: 1px solid red; */
 }
 .nav-sub button{
     letter-spacing: 2px;
@@ -84,20 +82,6 @@ nav{
     padding: 10px;
     line-height: 2;
     cursor: pointer;
-}
-.nav-sub button::after{  
-    content: '';
-    height: 2px;
-    width: 0%;
-    background-color: rgb(255, 255, 255);
-    display: block;
-    transition: .5s ease-in-out;
-}
-.nav-sub button:hover::after{
-    content: '';
-    height: 2px;
-    width: 100%;
-    display: block;
 }
 .btn{
     color: rgb(0, 0, 0);
@@ -193,6 +177,7 @@ nav{
 /*----------------------------------- teacher_table */
 .table_wrapper{
     margin-top: 120px;
+    /* border: 1px solid red; */
 }
 thead tr{
     color: white;
@@ -233,20 +218,19 @@ caption{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* margin: 7px; */
     width: 150px;
     margin: auto;
 }
 /* --------------------------------------teacher table */
 .teacher_table{
     border-collapse: collapse;
-    width: 1200px;
+    /* width: 1200px; */
     margin: auto;
 }
 /* ---------------------------------------student table */
 .student_table{
     border-collapse: collapse;
-    width: 1200px;
+    /* width: 1200px; */
     margin: auto;
     margin-top: 70px;
 }
@@ -258,7 +242,7 @@ caption{
     left: 0;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 120px;
+    margin-top: 90px;
     padding: 40px 0px;
     width: 400px;
     box-shadow: 3px 3px 10px;
@@ -274,11 +258,123 @@ caption{
     left: 0;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 120px;
+    margin-top: 90px;
     padding: 40px 0px;
     width: 400px;
     box-shadow: 3px 3px 10px;
     border-radius: 10px;
     background-color: rgb(206, 232, 255);
     position: fixed;
+}
+
+/* ----------------------------------------------burger_menu */
+
+
+
+
+/* -------------------------------------------------------RESPONSIVE */
+@media (max-width:1100px){
+    .burger_menu{
+        display: block;
+    }
+    .ollc-logo p{
+        display: none;
+    }
+     .nav-sub{
+        transform: translateX(200%);
+        /* display: block; */
+        align-items: center;
+        justify-content: space-around;
+        background-color: rgb(47, 126, 201);
+        width: 100%;
+        position: absolute;
+        top: 0;
+        margin-top: 90px;
+        left: 0;
+        right: 0;
+        padding: 10px 0px;
+        border-top: 2px solid rgb(52, 183, 243);
+    }
+    .nav-sub_1{
+        transform: translateX(0%);
+    }
+    .table_wrapper{
+        margin-top: 170px;
+        width: 100%;
+    }
+    thead tr{
+        color: white;
+        background-color: rgba(0, 0, 0, 0.664);
+        font-size: 16px;
+        /* letter-spacing: 2px; */
+        letter-spacing: 1px;
+    }
+    tbody tr{
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.733);
+        height: 50px;
+        text-transform: capitalize;
+        color: rgb(0, 0, 0);
+        font-size: 13px;
+    }
+    tr td{
+        padding: 5px 0px;
+    }
+    tr th{
+        /* border: 1px solid red; */
+        padding: 3px;
+    }
+    .student_table{
+        width: 99%;
+    }
+    .teacher_table{
+        width: 99%;
+    }
+    .action_row{
+        display: block;
+        align-items: center;
+        justify-content: space-around;
+        width: 150px;
+        margin: auto;
+        margin-top: 10px;
+        /* border: 1px solid green; */
+    }
+    .btn{
+        margin-top: 10px;
+        padding: 5px 30px;
+    }
+}
+
+@media (min-width:1100px) and (max-width:5000px){
+    .nav-sub a::after{  
+        content: '';
+        height: 2px;
+        width: 0%;
+        background-color: rgb(255, 255, 255);
+        display: block;
+        transition: .5s ease-in-out;
+    }
+    .nav-sub a:hover::after{
+        content: '';
+        height: 2px;
+        width: 100%;
+        display: block;
+    }
+    .nav-sub button::after{  
+        content: '';
+        height: 2px;
+        width: 0%;
+        background-color: rgb(255, 255, 255);
+        display: block;
+        transition: .5s ease-in-out;
+    }
+    .nav-sub button:hover::after{
+        content: '';
+        height: 2px;
+        width: 100%;
+        display: block;
+    }
+    .student_table,.teacher_table{
+        width: 80%;
+    }
 }

@@ -250,7 +250,7 @@ footer p{
 
 
 /* ------------------------------------------------------RESPONSIVE  */
-@media (min-width:901px) and (max-width:5000px){
+@media (min-width:901px) and (max-width:10000px){
     .btn::after{  
         content: '';
         height: 2px;
