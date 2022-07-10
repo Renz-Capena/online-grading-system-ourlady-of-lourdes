@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: courier;
+    transition: 0.9s;
     /* border: 1px solid red; */
 }
 body{
@@ -12,7 +13,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 90px;
+    height: 70px;
     background-color: rgb(7, 121, 197);
     top:0;
     width: 100%;
@@ -20,10 +21,11 @@ nav{
     /* display: none; */
 }
 .ollc-logo{
-    width: 950px;
-    margin-left: 50px;
+    width: 100%;
+    margin-left: 20%;
     display: flex;
     align-items: center;
+    /* border: 1px solid red; */
 }
 .ollc-logo p{
     margin-left: 30px;
@@ -33,25 +35,13 @@ nav{
     font-weight: bold;
 }
 .ollc-logo img{
-    width: 75px;
+    width: 70px;
+    height: 70px;
 }
 .nav-sub{
     margin-right: 50px;
     display: flex;
-}
-.nav-sub a::after{  
-    content: '';
-    height: 2px;
-    width: 0%;
-    background-color: rgb(255, 255, 255);
-    display: block;
-    transition: .5s ease-in-out;
-}
-.nav-sub a:hover::after{
-    content: '';
-    height: 2px;
-    width: 100%;
-    display: block;
+    /* border: 1px solid red; */
 }
 .teacher_reminder_btn{
     letter-spacing: 2px;
@@ -59,7 +49,7 @@ nav{
     font-size: 16px;
     background: none;
     border: none;
-    width: 229px;
+    /* width: 229px; */
     color: rgb(255, 255, 255);
     margin: 0px 20px;
     padding: 10px;
@@ -72,27 +62,14 @@ nav{
     font-size: 16px;
     background: none;
     border: none;
-    width: 100px;
+    /* width: 100px; */
     color: rgb(255, 255, 255);
     margin: 0px 20px;
     padding: 10px;
     line-height: 2;
     cursor: pointer;
 }
-.nav-sub button::after{  
-    content: '';
-    height: 2px;
-    width: 0%;
-    background-color: rgb(255, 255, 255);
-    display: block;
-    transition: .5s ease-in-out;
-}
-.nav-sub button:hover::after{
-    content: '';
-    height: 2px;
-    width: 100%;
-    display: block;
-}
+
 
 /* =======================================section */
 section{
@@ -132,10 +109,6 @@ tr td{
     border: 1px solid;
     padding: 20px;
 }
-td input{
-    width: 50px;
-    text-align: center;
-}
 /* ------------------------------------------------reminders table */
 .reminders_table{
     position: absolute;
@@ -144,7 +117,6 @@ td input{
     margin-top: 150px;
     left: 0;
     right: 0;
-    width: 700px;
     transition: 0.5s;
     opacity: 0;
     z-index: -1;
@@ -158,7 +130,7 @@ td input{
 .close_reminder_btn{
     height: 40px;
     width: 60px;
-    margin-left: 50px;
+    /* margin-left: 50px; */
     background: none;
     border: 1px solid black;
     border-radius: 10px;
@@ -168,4 +140,139 @@ td input{
 .close_reminder_btn:hover{
     background-color: black;
     color: whitesmoke;
+}
+.burger_menu{
+    display: none;
+    /* border: 1px solid rgb(128, 0, 0); */
+    border-radius: 10px;
+    border: 1px solid;
+    position: absolute;
+    right: 0;
+    margin-right: 5%;
+}
+.burger_menu_1{
+    transform: rotate(180deg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------------------------RESPONSIVE */
+@media (max-width: 900px){
+    .ollc-logo{
+        margin-left: 5%;
+    }
+    .ollc-logo p{
+        display: none;
+    }
+    .ollc-logo img{
+        width: 40px;
+        height: 40px;
+    }
+    .nav-sub{
+        position: absolute;
+        transform: translateX(200%);
+        margin-top: 110px;
+        background-color: rgb(47, 126, 201);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border-top: 2px solid rgb(52, 183, 243);
+        justify-content: space-around;
+    }
+    .nav_sub_1{
+        transform: translateX(0%);
+    }
+    .nav-sub button{
+        padding: 0;
+        margin: 7px;
+        /* border: none; */
+    }
+    .burger_menu{
+        display: block;
+    }
+    .teacher_reminder_btn{
+        /* letter-spacing: 2px; */
+        font-family: courier;
+        font-size: 15px;
+        background: none;
+        border: none;
+        /* width: 229px; */
+        color: rgb(255, 255, 255);
+        margin: 0px 2px;
+        padding: 5px;
+        /* line-height: 2; */
+        cursor: pointer;
+        border-bottom: 1px solid;
+    }
+    .logout_btn{
+        letter-spacing: 2px;
+        font-family: courier;
+        font-size: 16px;
+        background: none;
+        border: none;
+        /* width: 100px; */
+        color: rgb(255, 255, 255);
+        margin: 0px 2px;
+        padding: 5px;
+        /* line-height: 2; */
+        cursor: pointer;
+        border-bottom: 1px solid;
+    }
+    /* ----------------------------------------------table */
+    table{
+        padding: 0px;
+        color: rgb(0, 0, 0);
+        background-color: rgba(255, 255, 255, 0.733);
+        box-shadow: 5px 5px 7px black;
+        width: 97%;
+        margin: auto;
+        margin-bottom: 20px;
+        border-collapse: collapse;
+        /* display: none; */
+    }
+    tr th{
+        color: white;
+        /* border: 1px solid black; */
+        width: 10%;
+        height: 50px;
+        background-color: rgb(7, 121, 197);
+    }
+    tr td{
+        padding: 2px;
+    }
+    .subjects{
+        border: 1px solid;
+        padding: 10px 0px;
+    }
+    .reminders_table{
+        width: 80%;
+    }
+}
+@media (min-width: 901px) and (max-width: 10000px){
+    .nav-sub button::after{  
+        content: '';
+        height: 2px;
+        width: 0%;
+        background-color: rgb(255, 255, 255);
+        display: block;
+        transition: .5s ease-in-out;
+    }
+    .nav-sub button:hover::after{
+        content: '';
+        height: 2px;
+        width: 100%;
+        display: block;
+    }
+    .reminders_table{
+        width: 50%;
+    }
 }

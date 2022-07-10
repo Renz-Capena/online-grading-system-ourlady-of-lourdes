@@ -57,7 +57,7 @@ body{
 .login_form input{
     color: rgb(0, 0, 0);
     height: 40px;
-    width: 200px;
+    width: 50%;
     border: none;
     border-bottom: 1px solid rgb(0, 0, 0);
     outline: none;
@@ -97,10 +97,13 @@ body{
     display: none;
     /* border: 1px solid rgb(128, 0, 0); */
     border-radius: 10px;
-    box-shadow: 2px 2px 5px black;
+    border: 1px solid;
     position: absolute;
     right: 0;
     margin-right: 5%;
+}
+.burger_menu_1{
+    transform: rotate(180deg);
 }
  .btn{
     background: none;
@@ -237,12 +240,13 @@ body{
 }
 /* ------------------------------------------------------footer */
 footer{
-    height: 40px;
+    padding: 5px;
     background-color: rgb(14, 91, 163);
 }
 footer p{
     color: white;
-    padding-top: 10px;
+    /* padding-top: 10px; */
+    font-size: 15px;
 }
 
 
@@ -303,19 +307,28 @@ footer p{
     }
     .btn_wrapper_1{
         transform: translateX(0%);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
     }
     .btn{
-        margin: 0px 20px;
+        padding: 0px;
+        margin: 0px 0px;
+        border-bottom: 1px solid;
+        height: 30px;
     }
     .burger_menu{
         display: block;
     }
     .heading_wrapper img{
         margin-left: 5%;
+        width: 40px;
+        height: 40px;
     }
     /* ----------------------------------section 1 */
     .section_1{
         margin-top: 250px;
+        /* word-break: keep-all; */
     }
     .school_name{
         font-size: 38px;
@@ -323,7 +336,8 @@ footer p{
     }
     /*----------------------------------- about */
     .about{
-        margin-top: 400px;
+        /* margin-top: 400px; */
+        margin-top:35%;
     }
     .column_1 img{
         width: 90%;
@@ -396,8 +410,6 @@ footer p{
     }
     /*------------------------------------------- footer */
     footer{
-        font-size: 14px;
-        padding: 0;
-        height: 50px;
+        font-size: 13px;
     }
 }

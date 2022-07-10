@@ -23,4 +23,5 @@ let btn_wrapper = document.querySelector('.btn_wrapper');
 
 burger_menu.addEventListener('click',()=>{
     btn_wrapper.classList.toggle('btn_wrapper_1');
+    burger_menu.classList.toggle('burger_menu_1');
 })

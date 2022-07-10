@@ -40,10 +40,10 @@ body{
     top:0;
     left: 0;
     right: 0;
-    width: 400px;
+    /* width: 400px; */
     height: 400px;
     margin: auto;
-    box-shadow: 5px 5px 7px black;
+    box-shadow: 5px 5px 10px black;
     border-radius: 20px;
     color: rgb(0, 0, 0);
     background-color: rgb(233, 233, 233);
@@ -55,7 +55,7 @@ body{
 .login_form input{
     color: rgb(0, 0, 0);
     height: 40px;
-    width: 200px;
+    width: 50%;
     border: none;
     border-bottom: 1px solid rgb(0, 0, 0);
     outline: none;
@@ -78,7 +78,6 @@ body{
     height: 40px;
     border-radius: 10px;
     cursor: pointer;
-    transition: 0.5s;
 }
 .login:hover{
     background-color: rgb(255, 255, 255);
@@ -99,7 +98,6 @@ body{
     background-color: rgb(255, 255, 255);
     border: 1px solid black;
     color:black;
-    transition: 0.5s;
 }
 /*--------------------------------------------------- button */
 .btn_wrapper{
@@ -123,10 +121,13 @@ body{
 .burger_menu{
     display: none;
     border-radius: 10px;
-    box-shadow: 2px 2px 5px black;
+    border: 1px solid;
     position: absolute;
     right: 0;
     margin-right: 5%;
+}
+.burger_menu_1{
+    transform: rotate(180deg);
 }
 /* ------------------------------------------------------section */
 section{
@@ -194,27 +195,58 @@ tbody tr:hover{
     }
     .btn_wrapper_1{
         transform: translateX(0%);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
     }
     .btn{
-        margin: 0px 20px;
+        padding: 0px;
+        margin: 0px 0px;
+        border-bottom: 1px solid;
+        height: 30px;
     }
     .burger_menu{
         display: block;
     }
     .heading_wrapper img{
         margin-left: 5%;
+        width: 40px;
+        height: 40px;
     }
+    /* ---------------------------------------login form */
     .login_form{
         margin-top: 200px;
+        width: 90%;
+    }
+    .login{
+        margin-top: 50px;
+        width: 80%;
+    }
+    #close_form_btn{
+        width: 80%;
     }
     /* --------------------------------------------section */
     section{
         display: block;
     }
-    table{
+    /* table{
         margin: auto;
         margin-top: 75px;
         width: 90%;
+    } */
+    .teacher_list{
+        width: 98%;
+        margin: auto;
+        margin-top: 50px;
+    }
+    .students_list{
+        width: 98%;
+        margin: auto;
+        margin-top: 130px;
+    }
+    /*------------------------------------------------- table */
+    tbody td{
+        padding: 10px 1px;
     }
 }
 
@@ -233,8 +265,19 @@ tbody tr:hover{
         width: 100%;
         display: block;
     }
+    /* .login_form{
+        margin-top: 10%;
+    } */
     .login_form{
         margin-top: 10%;
+        width: 400px;
+    }
+    .login{
+        margin-top: 50px;
+        width: 300px;
+    }
+    #close_form_btn{
+        width: 300px;
     }
     table{
         width: 45%;
