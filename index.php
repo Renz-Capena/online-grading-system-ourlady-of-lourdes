@@ -125,11 +125,27 @@
         <div class="column_2">
             <div>
                 <h2>MISSION</h2>
-                <p>The Our Lady of Lourdes College is a privately owned and managed educational institution. As originally conceived by Mr. and Mrs. Alfredo Demetillo it continues to be service oriented in fulfilling its mission to serve the growing population of Valenzuela City and the neighboring communities.</p>
+                    <p>As achievers and sharers of the gifts, talents and
+                    endowments we have been blessed with, we are called
+                    to search for a social transformation that will help
+                    uplift the less fortunate, underprivileged and
+                    marginalized.<br><br>
+                    We will perseveringly intensify our effort towards
+                    professional and personal development thereby
+                    making our service reflective of our resolve to
+                    pursue excellence in the genre of education we
+                    profess to deliver which foster the fear of God and
+                    promotive of justice, honesty, self-reliance and
+                    global competitiveness.<br><br>
+                    As OLLCians we will be guided by the vision and
+                    charisma of our founder.<br><br>
+                    We humbly hope to achieve our mission by becoming
+                    living signs of what we profess.
+                    To be.</p>
             </div>
             <div>
                 <h2>VISION</h2>
-                <p>The Our Lady of Lourdes College is a privately owned and managed educational institution. As originally conceived by Mr. and Mrs. Alfredo Demetillo it continues to be service oriented in fulfilling its mission to serve the growing population of Valenzuela City and the neighboring communities.</p>
+                <p>We, OUR LADY OF LOURDES COLLEGE community envision a challenging future with ample and rich opportunities, skills, and Technological competencies,skills, and values equip us to become globally competitive.<br><br>We fervently stand for TRUTH, COMMITMENT AND EXCELLENCE</p>
             </div>
         </div>
     </section>
@@ -142,11 +158,11 @@
             <br><br>
             <i>Web Developer</i>
             <div class="description_me">
-                <p>Hello I'm <b><i>Renz Colin D. Capeña</i></b> the creator of this website . I build this website fromm scratch using HTML, CSS, JAVASRIPT and PHP I hope you enjoy it. Also I build this website to enhance my knowledge about Cread, Read, Update and Delete(CRUD) in database. This website is about simple Online grading system of Our lady of Luordes College of Valenzuela. This website have a 3 user that is admin, teacher and student.
+                <p>Hello I'm <b><i>Renz Colin D. Capeña</i></b> the creator of this website . I build this website from scratch using pure HTML, CSS, JAVASRIPT and PHP. This website is user friendly because it is responsive  I hope you enjoy it. also I build this website to enhance my knowledge about Cread, Read, Update and Delete(CRUD) in database. This website is about simple Online grading system of Our lady of Luordes College of Valenzuela. This website have a 3 user that is admin, teacher and student.
                 <br><br>
                 - The admin can create a teachers account and students account the admin also can edit and delete the accounts.
                 <br><br>
-                - The teachers account can manage the grades of the students the teacher account can create and update the grades of the students.
+                - The teachers account can manage the grades of the students they can create and update the grades of the students. Also the teachers account can remind the students about the grades.
                 <br><br>
                 - The students account can only view the grades.</p>
             </div>

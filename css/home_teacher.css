@@ -394,7 +394,6 @@ form input{
         margin: auto;
         transition: 1s;
         opacity: 0;
-        border: 1px solid red;
         /* display: none; */
     }
     .form_grade_wrapper_1{
@@ -405,7 +404,6 @@ form input{
         z-index: 2;
         margin-top: 30px;
         position: fixed;
-        border: 1px solid red;
     }
     form input{
         width: 20px;
