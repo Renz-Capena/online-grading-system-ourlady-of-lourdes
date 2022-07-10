@@ -1,6 +1,7 @@
 <?php 
     require "connection.php";
     $con = connect();
+    session_start();
 
     $student_id = $_GET['id'];
 
@@ -53,6 +54,7 @@
 
     if(isset($_POST['logout_btn'])){
         unset($_SESSION['status']);
+        unset($_SESSION['user_id']);
 
         header("location: index.php");
     }

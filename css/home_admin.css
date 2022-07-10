@@ -71,7 +71,7 @@ nav{
     color: rgb(255, 255, 255);
     margin: 0px 20px;
     padding: 10px;
-    /* width: 150px; */
+    width: 150px;
     line-height: 2;
     
 }
@@ -310,6 +310,9 @@ caption{
         padding: 10px 0px;
         border-top: 2px solid rgb(52, 183, 243);
     }
+    .nav-sub a{
+        width: auto;
+    }
     .nav-sub_1{
         transform: translateX(0%);
     }
@@ -358,6 +361,8 @@ caption{
         border: none;
         width: 50%;
         /* border: 1px solid; */
+        display: flex;
+        justify-content: space-between;
     }
     /* --------teacher row responsive name in left */
     .teacher_table tbody tr td:nth-child(1)::before{
@@ -404,8 +409,9 @@ caption{
     
     /*-------------------------------------------------------*/
     .btn{
-        margin-top: 10px;
-        padding: 5px 30px;
+        margin-top: 10px 0px;
+        padding: 5px 20px;
+        /* border: 1px solid red; */
     }
     /* ----------------------------------------------form students and teachers */
     .student_form,.teacher_form{
@@ -441,7 +447,13 @@ caption{
     }
     /* ---------------------------------------update form students and teacher */
     .teacher_form_update{
-        width: 95%;
+        width: 90%;
+        margin-top: 30px;
+        /* border: 1px solid red; */
+    }
+    .student_form_update{
+        margin-top: 30px;
+        width: 90%;
     }
 }
 

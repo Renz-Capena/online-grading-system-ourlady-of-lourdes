@@ -1,6 +1,7 @@
 <?php 
     require "connection.php";
     $con = connect();
+    session_start();
 
     $command = "SELECT * FROM `students`";
     $list = $con->query($command);
@@ -62,7 +63,7 @@
     <nav>
         <div class="ollc-logo">
             <img src="img/logo.png">
-            <img src="img/burger.png" class="burger_menu burger_menu_copy">
+            <img src="img/burger.png" class="burger_menu">
             <p>OUR LADY OF LOURDES COLLEGE OF VALENZUELA</p>
         </div>
         <div class="nav-sub">
@@ -245,6 +246,15 @@
             </table>
         </div>
 
+        <script type="text/javascript">
+            let  nav_sub = document.querySelector('.nav-sub');
+            let burger_menu = document.querySelector('.burger_menu');
+
+            burger_menu.addEventListener('click',()=>{
+                nav_sub.classList.toggle('nav-sub_1');
+                burger_menu.classList.toggle('burger_menu_1')
+            })
+        </script>
 
 
 
@@ -259,7 +269,6 @@
 
 
 
-    <script src="js/js_admin.js"></script>
-    <script src="js/edit_teacher.js"></script>
+    <!-- <script src="js/js_admin.js"></script> -->
 </body>
 </html>

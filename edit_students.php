@@ -1,6 +1,7 @@
 <?php 
     require "connection.php";
     $con = connect();
+    session_start();
 
     $command = "SELECT * FROM `students`";
     $list = $con->query($command);
@@ -116,7 +117,7 @@
 
     <div class="student_form_update">
 
-            <h2>Create Student Record</h2>
+            <h2>Update Student Record</h2>
 
             <form method="post" class="signin_form">
 
@@ -263,6 +264,26 @@
             </table>
         </div>
 
-    <script src="js/js_admin.js"></script>
+
+
+
+
+
+
+
+
+
+
+        <script type="text/javascript">
+            let  nav_sub = document.querySelector('.nav-sub');
+            let burger_menu = document.querySelector('.burger_menu');
+
+            burger_menu.addEventListener('click',()=>{
+                nav_sub.classList.toggle('nav-sub_1');
+                burger_menu.classList.toggle('burger_menu_1')
+            })
+        </script>
+
+    <!-- <script src="js/js_admin.js"></script> -->
 </body>
 </html>
