@@ -118,6 +118,11 @@ body{
     line-height: 2;
     border: none;
 }
+#login_btn{
+    /* font-weight: bold; */
+    font-family: courier;
+    font-size: 15px;
+}
 .burger_menu{
     display: none;
     border-radius: 10px;
@@ -179,7 +184,7 @@ tbody tr:hover{
 
 
 /*---------------------------------------------- responsive */
-@media (max-width: 900px){
+@media (max-width: 1000px){
     .btn_wrapper{
         transform: translateX(200%);
         display: block;
@@ -250,7 +255,7 @@ tbody tr:hover{
     }
 }
 
-@media (min-width:901px) and (max-width:5000px){
+@media (min-width:1001px) and (max-width:5000px){
     .btn::after{  
         content: '';
         height: 2px;

@@ -18,12 +18,13 @@ body{
     height: 100%;
     filter: blur(4px);
     opacity: 0.7;
+    position: fixed;
 }
 nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 90px;
+    height: 70px;
     background-color: rgb(7, 121, 197);
     top:0;
     width: 100%;
@@ -44,7 +45,8 @@ nav{
     font-weight: bold;
 }
 .ollc-logo img{
-    width: 75px;
+    width: 60px;
+    height: 60px;
 }
 .nav-sub{
     margin-right: 50px;
@@ -55,10 +57,13 @@ nav{
     display: none;
     /* border: 1px solid rgb(128, 0, 0); */
     border-radius: 10px;
-    box-shadow: 2px 2px 5px black;
+    border: 1px solid;
     position: absolute;
     right: 0;
     margin-right: 5%;
+}
+.burger_menu_1{
+    transform: rotate(180deg);
 }
 .nav-sub a{
     letter-spacing: 2px;
@@ -66,9 +71,9 @@ nav{
     color: rgb(255, 255, 255);
     margin: 0px 20px;
     padding: 10px;
-    width: 150px;
+    /* width: 150px; */
     line-height: 2;
-    /* border: 1px solid red; */
+    
 }
 .nav-sub button{
     letter-spacing: 2px;
@@ -76,9 +81,8 @@ nav{
     font-size: 16px;
     background: none;
     border: none;
-    width: 100px;
     color: rgb(255, 255, 255);
-    margin: 0px 20px;
+    margin: 0px 10px;
     padding: 10px;
     line-height: 2;
     cursor: pointer;
@@ -142,9 +146,11 @@ nav{
     display: none;
     transition: 1s;
     background-color: rgb(206, 232, 255);
+    position: fixed;
 }
 .container_info_login{
     margin: 30px 0px;
+    /* border: 1px solid red; */
 }
 .container_info_login input{
     width: 200px;
@@ -170,6 +176,7 @@ nav{
     border-radius: 10px;
     display: none;
     background-color: rgb(206, 232, 255);
+    position: fixed;
 }
 .teacher_signin_form{
     margin-top: 20px;
@@ -273,12 +280,20 @@ caption{
 
 
 /* -------------------------------------------------------RESPONSIVE */
-@media (max-width:1100px){
+@media (max-width:1000px){
     .burger_menu{
         display: block;
     }
+    .ollc-logo{
+        margin-left: 5%;
+    }
     .ollc-logo p{
         display: none;
+    }
+    .ollc-logo img{
+        width: 40px;
+        height: 40px;
+        /* border: 1px solid red; */
     }
      .nav-sub{
         transform: translateX(200%);
@@ -289,7 +304,7 @@ caption{
         width: 100%;
         position: absolute;
         top: 0;
-        margin-top: 90px;
+        margin-top: 70px;
         left: 0;
         right: 0;
         padding: 10px 0px;
@@ -298,54 +313,139 @@ caption{
     .nav-sub_1{
         transform: translateX(0%);
     }
+    .nav-sub button,.nav-sub a{
+        letter-spacing: 0px;
+        font-family: courier;
+        font-size: 13px;
+        background: none;
+        border: none;
+        color: rgb(255, 255, 255);
+        margin: 0px;
+        padding: 0px;
+        line-height: 2;
+        cursor: pointer;
+        border-bottom: 1px solid;
+    }
     .table_wrapper{
         margin-top: 170px;
         width: 100%;
+        /* display: none; */
     }
-    thead tr{
-        color: white;
-        background-color: rgba(0, 0, 0, 0.664);
-        font-size: 16px;
-        /* letter-spacing: 2px; */
-        letter-spacing: 1px;
+    /* ------------------------------------------------table */
+    table{
+        width: 95%;
     }
-    tbody tr{
-        cursor: pointer;
+    thead{
+        display: none;
+    }
+    tbody td{
+        height: 40px;
+    }
+    td{
+        display: block;
+        /* border: 1px solid; */
+        margin: 2px;
+        border-bottom: 1px solid;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    tbody tr:hover{
         background-color: rgba(255, 255, 255, 0.733);
-        height: 50px;
-        text-transform: capitalize;
-        color: rgb(0, 0, 0);
-        font-size: 13px;
-    }
-    tr td{
-        padding: 5px 0px;
-    }
-    tr th{
-        /* border: 1px solid red; */
-        padding: 3px;
-    }
-    .student_table{
-        width: 99%;
-    }
-    .teacher_table{
-        width: 99%;
     }
     .action_row{
-        display: block;
-        align-items: center;
-        justify-content: space-around;
-        width: 150px;
-        margin: auto;
-        margin-top: 10px;
-        /* border: 1px solid green; */
+        margin-bottom: 100px;
+        border: none;
+        width: 50%;
+        /* border: 1px solid; */
     }
+    /* --------teacher row responsive name in left */
+    .teacher_table tbody tr td:nth-child(1)::before{
+        content: "ID : ";
+    }
+    .teacher_table tbody tr td:nth-child(2)::before{
+        content: "FIRST NAME : ";
+    }
+    .teacher_table tbody tr td:nth-child(3)::before{
+        content: "LAST NAME : ";
+    }
+    .teacher_table tbody tr td:nth-child(4)::before{
+        content: "EMAIL : ";
+    }
+    .teacher_table tbody tr td:nth-child(5)::before{
+        content: "PASSWORD : ";
+    }
+
+    /* --------student row responsive name in left */
+    .student_table tbody tr td:nth-child(1)::before{
+        content: "ID : ";
+    }
+    .student_table tbody tr td:nth-child(2)::before{
+        content: "FIRST NAME : ";
+    }
+    .student_table tbody tr td:nth-child(3)::before{
+        content: "LAST NAME : ";
+    }
+    .student_table tbody tr td:nth-child(4)::before{
+        content: "GRADE : ";
+    }
+    .student_table tbody tr td:nth-child(5)::before{
+        content: "STATUS : ";
+    }
+    .student_table tbody tr td:nth-child(6)::before{
+        content: "EMAIL : ";
+    }
+    .student_table tbody tr td:nth-child(7)::before{
+        content: "PASSWORD : ";
+    }
+    td::before{
+        font-weight: bold;
+    }
+    
+    /*-------------------------------------------------------*/
     .btn{
         margin-top: 10px;
         padding: 5px 30px;
     }
+    /* ----------------------------------------------form students and teachers */
+    .student_form,.teacher_form{
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        left: 0;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 30px;
+        padding: 40px 0px;
+        width: 95%;
+        box-shadow: 3px 3px 10px;
+        border-radius: 10px;
+        display: none;
+        transition: 1s;
+        background-color: rgb(206, 232, 255);
+        position: fixed;
+        /* border: 1px solid red; */
+    }
+    .container_info_login{
+        margin: 30px 0px;
+        /* border: 1px solid red; */
+    }
+    .container_info_login input{
+        width: 50%;
+        border: none;
+        border-bottom: 1px solid;
+        outline: none;
+        text-align: center;
+        background: none;
+        height: 30px;
+    }
+    /* ---------------------------------------update form students and teacher */
+    .teacher_form_update{
+        width: 95%;
+    }
 }
 
-@media (min-width:1100px) and (max-width:5000px){
+@media (min-width:1001px) and (max-width:5000px){
     .nav-sub a::after{  
         content: '';
         height: 2px;

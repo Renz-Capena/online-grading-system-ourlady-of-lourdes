@@ -55,3 +55,14 @@ close_reminder.addEventListener('click',()=>{
     form_reminders.style.opacity = "0";
 })
 
+
+//----------------------------------------------------------- RESPONSIVE
+let burger_menu = document.querySelector('.burger_menu');
+let nav_sub = document.querySelector('.nav-sub');
+
+
+burger_menu.addEventListener('click',()=>{
+    nav_sub.classList.toggle('nav-sub_1')
+    burger_menu.classList.toggle('burger_menu_1');
+})
+

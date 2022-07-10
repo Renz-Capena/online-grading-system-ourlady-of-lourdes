@@ -127,6 +127,7 @@
     <nav>
         <div class="ollc-logo">
             <img src="img/logo.png">
+            <img src="img/burger.png" class="burger_menu">
             <p>OUR LADY OF LOURDES COLLEGE OF VALENZUELA</p>
         </div>
         <div class="nav-sub">
@@ -140,9 +141,10 @@
     <!-- ----------------------------------------section -->
     <img src="img/bg.jpg" alt="sample" class="image_bg">
     <section>
-        <button class="btn recorded">STUDENTS WITH RECORDS</button>
-        <button class="btn not_recorded">STUDENTS WITH NO RECORDS</button>
-        
+        <div class="record_and_norecord_wrapper">
+            <button class="btn recorded">STUDENTS WITH RECORDS</button>
+            <button class="btn not_recorded">STUDENTS WITH NO RECORDS</button>
+        </div>
         <div class="table_wrapper_both">
             <table class="table_recorded">
                 <caption>STUDENTS WITH CARDS</caption>
@@ -167,7 +169,7 @@
                                 <td><?php echo $row_recorded['grade']?></td>
                                 <td><?php echo $row_recorded['email']?></td>
                                 <td><?php echo $row_recorded['password']?></td>
-                                <td><a class="link_view_grades" href="student_grades_view.php?id=<?php echo $row_recorded['id']?>"><?php echo $row_recorded['card']?></a></td>
+                                <td class="spacing_and_color"><a class="link_view_grades" href="student_grades_view.php?id=<?php echo $row_recorded['id']?>"><?php echo $row_recorded['card']?></a></td>
                             </tr>
                         <?php }while($row_recorded = $list_recorded->fetch_assoc()) ?>
                     <?php }else{ ?>
@@ -203,7 +205,7 @@
                             <td><?php echo $row_no_recorded['grade']?></td>
                             <td><?php echo $row_no_recorded['email']?></td>
                             <td><?php echo $row_no_recorded['password']?></td>
-                            <td><?php echo $row_no_recorded['card']?></td>
+                            <td class="spacing_and_color"><?php echo $row_no_recorded['card']?></td>
                         </tr>
                         <?php }while($row_no_recorded = $list_no_recorded->fetch_assoc()) ?>
                     <?php }else{ ?>
@@ -221,7 +223,7 @@
                 <button class="close_btn_grade">&#x2716;</button>
             </div>
             <form method="post">
-                <table>
+                <table class="create_grade_table">
                     <thead>
                         <tr>
                             <th></th>

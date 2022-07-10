@@ -108,8 +108,8 @@
             <p>OUR LADY OF LOURDES COLLEGE OF VALENZUELA</p>
         </div>
         <div class="nav-sub">
-            <a href="#" class="teacher_btn">ADD TEACHERS</a>
-            <a href="#" class="student_btn">ADD STUDENT</a>
+            <button class="teacher_btn">ADD TEACHERS</button>
+            <button class="student_btn">ADD STUDENT</button>
             <form method="post">
                 <button name="logout_btn">LOGOUT</button>
             </form>
@@ -230,7 +230,7 @@
             </table>
 
             <table class="student_table">
-                <caption>STUDENT LIST</caption>
+                <caption>STUDENTS LIST</caption>
                 <thead>
                     <tr>
                         <th>ID</th>

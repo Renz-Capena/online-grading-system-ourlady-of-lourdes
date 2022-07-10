@@ -132,6 +132,11 @@ body{
     border: 1px solid black;
     color:black;
 }
+#login_btn{
+    /* font-weight: bold; */
+    font-family: courier;
+    font-size: 16px;
+}
 /* -----------------------------------------------section 1 */
 .section_1{
     /* border: 1px solid red; */
@@ -254,7 +259,7 @@ footer p{
 
 
 /* ------------------------------------------------------RESPONSIVE  */
-@media (min-width:901px) and (max-width:10000px){
+@media (min-width:1001px) and (max-width:10000px){
     .btn::after{  
         content: '';
         height: 2px;
@@ -291,7 +296,7 @@ footer p{
         line-height: 2;
     }
 }
-@media (max-width: 900px){
+@media (max-width: 1000px){
     .btn_wrapper{
         transform: translateX(200%);
         display: block;

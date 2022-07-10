@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: courier;
+    transition: 0.9s;
     /* border: 1px solid red; */
 }
 body{
@@ -22,7 +23,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 90px;
+    height: 70px;
     background-color: rgb(7, 121, 197);
     top:0;
     width: 100%;
@@ -60,52 +61,24 @@ nav{
     padding: 10px;
     line-height: 2;
 }
-.nav-sub a::after{  
-    content: '';
-    height: 2px;
-    width: 0%;
-    background-color: rgb(255, 255, 255);
-    display: block;
-    transition: .5s ease-in-out;
-}
-.nav-sub a:hover::after{
-    content: '';
-    height: 2px;
-    width: 100%;
-    display: block;
-}
 .nav-sub button{
     letter-spacing: 2px;
     font-family: courier;
     font-size: 16px;
     background: none;
     border: none;
-    width: 100px;
+    /* width: 100px; */
     color: rgb(255, 255, 255);
     margin: 0px 20px;
     padding: 10px;
     line-height: 2;
     cursor: pointer;
 }
-.nav-sub button::after{  
-    content: '';
-    height: 2px;
-    width: 0%;
-    background-color: rgb(255, 255, 255);
-    display: block;
-    transition: .5s ease-in-out;
-}
-.nav-sub button:hover::after{
-    content: '';
-    height: 2px;
-    width: 100%;
-    display: block;
-}
 /* ---------------------------------------------section start*/
 section{
     margin-top: 120px;
 }
-section div{
+.table_wrapper_both{
     display: flex;
     justify-content: space-around;
     /* border: 1px solid red;   */
@@ -173,8 +146,10 @@ tbody tr:hover{
     color: black;
     background-color: rgb(255, 255, 255);
 }
+.recorded,.not_recorded{
+    width: 20%;
+}
 .btn:focus{
-    font-size: 15px;
     background-color: rgba(0, 0, 0, 0.863);
     font-weight: bold;
     color: white;
@@ -187,14 +162,15 @@ tbody tr:hover{
     border: 1px solid black;
     border-radius: 10px;
     transition: 0.5s;
-    cursor: pointer;
+    cursor: default;
 }
 .btn_1:hover{
     background-color: black;
     color: whitesmoke;
 }
-/* ------------------------------------table_recorded */
+/* -----------------------------------------table_recorded */
 .table_recorded{
+    /* display: none; */
     margin-top: 100px;
     width: 90%;
     position: absolute;
@@ -205,6 +181,7 @@ tbody tr:hover{
     transform: translateX(0%);
 }
 .table_not_record{
+    /* display: none; */
     margin-top: 100px;
     width: 90%;
     position: absolute;
@@ -228,12 +205,17 @@ tbody tr:hover{
     z-index: 2;
     margin-top: 30px;
     position: fixed;
+    /* opacity: 0; */
+}
+.form_grade_wrapper_1 form table tbody tr{
+    cursor: default;
 }
 form input{
     width: 50px;
     height: 20px;
     text-align: center;
     font-weight: bolder;
+    cursor: default;
 }
 .form_settings{
     border: 1px solid black;
@@ -273,6 +255,7 @@ form input{
     width: 30px;
     margin-right: 20px;
     margin: 5px;
+    cursor: default;
 }
 /*----------------------------------------------- form reminders */
 .form_reminders{
@@ -320,5 +303,342 @@ form input{
     background-color: black;
     color: whitesmoke;
 }
+.burger_menu{
+    display: none;
+    /* border: 1px solid rgb(128, 0, 0); */
+    border-radius: 10px;
+    border: 1px solid;
+    position: absolute;
+    right: 0;
+    margin-right: 5%;
+}
+.burger_menu_1{
+    transform: rotate(180deg);
+}
 
+
+
+
+/* ---------------------------------------------------RESPONSIVE */
+
+@media (max-width:1000px){
+    .burger_menu{
+        display: block;
+    }
+    .ollc-logo{
+        width: 100%;
+        margin-left: 5%;
+        display: flex;
+        align-items: center;
+        /* border: 1px solid red; */
+    }
+    .ollc-logo img{
+        width: 40px;
+        height: 40px;
+    }
+    .ollc-logo p{
+        display: none;
+    }
+    .nav-sub{
+        transform: translateX(200%);
+        display: none;
+        margin-right: 0px;
+        display: flex;
+        width: 100%;
+        position: absolute;
+        align-items: center;
+        justify-content: space-around;
+        margin-top: 100px;
+        background-color: rgb(47, 126, 201);
+        border-top: 2px solid rgb(52, 183, 243);
+        /* border: 1px solid red; */
+    }
+    .nav-sub_1{
+        transform: translateX(0%);
+    }
+    .nav-sub a{
+        cursor: pointer;
+        letter-spacing: normal;
+        text-decoration: none;
+        color: rgb(255, 255, 255);
+        margin: 5px 0px;
+        padding: 0px;
+        line-height:normal;
+        font-size: 13px;
+        border-bottom: 1px solid;
+        padding: 5px;
+        /* border: 1px solid red; */
+    }
+    .nav-sub button{
+        letter-spacing: normal;
+        font-family: courier;
+        font-size: 13px;
+        background: none;
+        border: none;
+        color: rgb(255, 255, 255);
+        margin: 0px;
+        padding: 0px;
+        line-height:normal;
+        cursor: pointer;
+        border-bottom: 1px solid;
+        padding: 5px;
+        /* border: 1px solid red; */
+    }
+    .btn{
+        width: 50%;
+        margin-top: 20px;
+    }
+    /* -----------------------------GRADES WRAPPER */
+    .form_grade_wrapper{
+        width: 100%;
+        margin: auto;
+        transition: 1s;
+        opacity: 0;
+        border: 1px solid red;
+        /* display: none; */
+    }
+    .form_grade_wrapper_1{
+        width: 100%;
+        margin-left: 0px;
+        margin: auto;
+        /* position:sticky; */
+        z-index: 2;
+        margin-top: 30px;
+        position: fixed;
+        border: 1px solid red;
+    }
+    form input{
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        font-weight: bolder;
+        cursor: default;
+    }
+    .form_settings{
+        width: 95%;
+        margin: auto;
+        border: 1px solid black;
+        display: flex;
+        /* justify-content: space-around; */
+        align-items: center;
+        box-shadow: 4px 4px 10px;
+        height:60px;
+        background-color: rgb(7, 121, 197);
+    }
+    .form_settings input{
+        text-align: center;
+        font-weight: bolder;
+        height: 30px;
+        width: 60px;
+        margin: 5px;
+    }
+    .form_settings label{
+        font-size: 14px;
+        font-weight: bold;
+    }
+    .create_grade_table{
+        width:95%;
+        margin: auto;
+    }
+    .btn_1{
+        width: 100px;
+        margin-right: 3%;
+    }
+    .create_grade_table tbody tr td{
+        padding:0px;
+        padding: 10px 0px;
+        /* margin: auto; */
+        /* width: 100px; */
+    }
+    .subjects{
+        font-size: 14px;
+        background-color: rgb(255, 255, 255);
+        width: 20%;
+        padding: 5px 2px;
+        word-break: break-all;
+    }
+    /* ------------------------------grade close btn */
+    .close_btn_wrapper{
+        width: 95%;
+        margin: auto;
+        text-align: right;
+        border: 1px solid black;
+        box-shadow: 4px 4px 10px;
+        background-color: rgb(7, 121, 197);
+    }
+    .close_btn_grade{
+        cursor: pointer;
+        background-color: rgb(158, 158, 158);
+        padding: 3px;
+        height: 30px;
+        width: 30px;
+        margin-right: 20px;
+        margin: 5px;
+        cursor: default;
+    }
+    /*----------------------------- FORM REMINDERS */
+    .form_reminders{
+        background-color: rgb(206, 232, 255);
+        width: 80%;
+        position: absolute;
+        z-index: 2;
+        top:0;
+        margin-top: 200px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 10px;
+        box-shadow: 5px 5px 10px black;
+        color: rgb(0, 0, 0);
+        transition: 0.5s;
+        opacity: 0;
+        z-index: -1;
+    }
+    .student_email{
+        margin-top: 20px;
+        width: 50%;
+        height: 35px;
+        border-radius: 10px;
+        outline: none;
+    }
+    .msg{
+        height: 100px;
+        width: 70%;
+        border-radius: 10px;
+        outline: none;
+    }
+    .btn_reminders{
+        height: 40px;
+        width: 60px;
+        margin: 5% 10%;
+        background: none;
+        border: 1px solid black;
+        border-radius: 10px;
+        transition: 0.5s;
+        cursor: pointer;
+    }
+    /* ------------------students record and no record btn */
+    section{
+        margin-top: 100px;
+    }
+    .record_and_norecord_wrapper{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .record_and_norecord_wrapper button{
+        width: 40%;
+        height: 60px;
+        font-size: 11px;
+    }
+    .btn:focus{
+        font-size: 12px;
+    }
+    /*----------------------------------- RECORDED TABLE RESPONSIVE */
+    .table_recorded thead{
+        display: none;
+    }
+    .table_recorded td{
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .table_recorded tr td::before{
+        font-weight: bolder;
+    }
+    .table_recorded tr td:nth-child(1)::before{
+        content: "ID : ";
+    }
+    .table_recorded tr td:nth-child(2)::before{
+        content: "FIRST NAME : ";
+    }
+    .table_recorded tr td:nth-child(3)::before{
+        content: "LAST NAME : ";
+    }
+    .table_recorded tr td:nth-child(4)::before{
+        content: "GRADE : ";
+    }
+    .table_recorded tr td:nth-child(5)::before{
+        content: "EMAIL : ";
+    }
+    .table_recorded tr td:nth-child(6)::before{
+        content: "PASSOWRD : ";
+    }
+    .table_recorded tr td:nth-child(7)::before{
+        content: "CARD STATUS : ";
+    }
+    /* -------------------------------------------NOT RECORDED GRADES */
+    .table_not_record_1{
+        transform: translateX(-200%);
+    }
+    .table_not_record thead{
+        display: none;
+    }
+    .table_not_record td{
+        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .table_not_record tr td::before{
+        font-weight: bolder;
+    }
+    .spacing_and_color{
+        margin-bottom: 100px;
+    }
+    .table_not_record tr td:nth-child(1)::before{
+        content: "ID : ";
+    }
+    .table_not_record tr td:nth-child(2)::before{
+        content: "FIRST NAME : ";
+    }
+    .table_not_record tr td:nth-child(3)::before{
+        content: "LAST NAME : ";
+    }
+    .table_not_record tr td:nth-child(4)::before{
+        content: "GRADE : ";
+    }
+    .table_not_record tr td:nth-child(5)::before{
+        content: "EMAIL : ";
+    }
+    .table_not_record tr td:nth-child(6)::before{
+        content: "PASSOWRD : ";
+    }
+    .table_not_record tr td:nth-child(7)::before{
+        content: "CARD STATUS : ";
+    }
+    
+}
+@media (min-width:1001px) and (max-width:5000px){
+    .nav-sub a::after{  
+        content: '';
+        height: 2px;
+        width: 0%;
+        background-color: rgb(255, 255, 255);
+        display: block;
+        transition: .5s ease-in-out;
+    }
+    .nav-sub a:hover::after{
+        content: '';
+        height: 2px;
+        width: 100%;
+        display: block;
+    }
+    .nav-sub button::after{  
+        content: '';
+        height: 2px;
+        width: 0%;
+        background-color: rgb(255, 255, 255);
+        display: block;
+        transition: .5s ease-in-out;
+    }
+    .nav-sub button:hover::after{
+        content: '';
+        height: 2px;
+        width: 100%;
+        display: block;
+    }
+}
 

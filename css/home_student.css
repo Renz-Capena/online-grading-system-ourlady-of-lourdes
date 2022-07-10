@@ -166,7 +166,7 @@ tr td{
 
 
 /* --------------------------------------------RESPONSIVE */
-@media (max-width: 900px){
+@media (max-width: 1000px){
     .ollc-logo{
         margin-left: 5%;
     }
@@ -256,8 +256,12 @@ tr td{
     .reminders_table{
         width: 80%;
     }
+    .reminders_table tbody td{
+        word-break: break-all;
+        padding: 50px 10px;
+    }
 }
-@media (min-width: 901px) and (max-width: 10000px){
+@media (min-width: 1001px) and (max-width: 10000px){
     .nav-sub button::after{  
         content: '';
         height: 2px;

@@ -35,5 +35,6 @@ let  nav_sub = document.querySelector('.nav-sub');
 
 burger_menu.addEventListener('click',()=>{
     nav_sub.classList.toggle('nav-sub_1');
+    burger_menu.classList.toggle('burger_menu_1')
 })
 
