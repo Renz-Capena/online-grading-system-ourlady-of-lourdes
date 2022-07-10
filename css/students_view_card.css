@@ -1,6 +1,7 @@
 *{
     margin: 0;
     font-family: courier;
+    transition: 0.9s;
 }
 body{
     text-align: center;
@@ -10,7 +11,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 90px;
+    height: 70px;
     background-color: rgb(7, 121, 197);
     top:0;
     width: 100%;
@@ -32,7 +33,8 @@ nav{
     font-weight: bold;
 }
 .ollc-logo img{
-    width: 75px;
+    width: 60px;
+    height: 60px;
 }
 .nav-sub{
     margin-right: 50px;
@@ -43,25 +45,11 @@ nav{
     font-size: 16px;
     background: none;
     border: none;
-    width: 100px;
+    /* width: 100px; */
     color: rgb(255, 255, 255);
     padding: 10px;
     line-height: 2;
     cursor: pointer;
-}
-.nav-sub button::after{  
-    content: '';
-    height: 2px;
-    width: 0%;
-    background-color: rgb(255, 255, 255);
-    display: block;
-    transition: .5s ease-in-out;
-}
-.nav-sub button:hover::after{
-    content: '';
-    height: 2px;
-    width: 100%;
-    display: block;
 }
 /*----------------------------------------------- section */
 section{
@@ -119,4 +107,97 @@ td input{
 .btn:hover{
     background: rgb(255, 255, 255);
     color: black;
+}
+
+@media (max-width:1000px){
+    nav{
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        height: 70px;
+        background-color: rgb(7, 121, 197);
+        top:0;
+        width: 100%;
+        position: fixed;
+        z-index: 5;
+        /* border: 1px solid red; */
+    }
+    .ollc-logo{
+        width: 60px;
+        margin-left: 5%;
+        display: flex;
+        align-items: center;
+        /* border: 1px solid red; */
+    }
+    .ollc-logo p{
+        display: none;
+    }
+    .ollc-logo img{
+        width:40px;
+        height: 40px;
+    }
+    .nav-sub{
+        margin-right: 5%;
+    }
+    .nav-sub button{
+        letter-spacing: 2px;
+        font-family: courier;
+        font-size: 14px;
+        background: none;
+        border: none;
+        /* width: 100px; */
+        color: rgb(255, 255, 255);
+        padding: 0px;
+        line-height: 2;
+        cursor: pointer;
+        border-bottom: 1px solid;
+    }
+    /*------------------------------------------------------ TABLE */
+    section{
+        margin-top: 100px;
+    }
+    table{
+        padding: 10px;
+        color: rgb(0, 0, 0);
+        background-color: rgba(255, 255, 255, 0.733);
+        box-shadow: 5px 5px 7px black;
+        width: 90%;
+        margin: auto;
+        margin-bottom: 20px;
+        border-collapse: collapse;
+    }
+    tr th{
+        color: white;
+        border: 1px solid black;
+        width: 10%;
+        height: 50px;
+        background-color: rgb(7, 121, 197);
+    }
+    tr td{
+        padding: 10px 5px;
+    }
+    .subjects{
+        border: 1px solid;
+        padding: 0px;
+    }
+    td input{
+        width: 30px;
+        text-align: center;
+    }
+}
+@media (min-width:1001px) and (max-width: 5000px){
+    .nav-sub button::after{  
+        content: '';
+        height: 2px;
+        width: 0%;
+        background-color: rgb(255, 255, 255);
+        display: block;
+        transition: .5s ease-in-out;
+    }
+    .nav-sub button:hover::after{
+        content: '';
+        height: 2px;
+        width: 100%;
+        display: block;
+    }
 }
