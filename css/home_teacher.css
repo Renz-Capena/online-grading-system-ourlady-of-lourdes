@@ -18,6 +18,7 @@ body{
     height: 100%;
     filter: blur(4px);
     opacity: 0.7;
+    position: fixed;
 }
 nav{
     display: flex;
@@ -107,7 +108,7 @@ thead th{
     letter-spacing: 2px;
 }
 tbody td{
-    padding: 20px;
+    /* padding: 20px; */
     border: 1px solid;
 }
 tbody tr{
@@ -186,6 +187,7 @@ tbody tr:hover{
     width: 90%;
     position: absolute;
     top: 100;
+    z-index: 2;
     /* transform: translateX(200%); */
 }
 .table_not_record_1{
@@ -202,7 +204,7 @@ tbody tr:hover{
 .form_grade_wrapper_1{
     margin-left: 200px;
     position: absolute;
-    z-index: 2;
+    z-index: 3;
     margin-top: 30px;
     position: fixed;
     /* opacity: 0; */
@@ -455,6 +457,10 @@ form input{
         padding: 5px 2px;
         word-break: break-all;
     }
+    tbody td{
+        padding: 20px 5px;
+        /* border: 1px solid; */
+    }
     /* ------------------------------grade close btn */
     .close_btn_wrapper{
         width: 95%;
@@ -637,6 +643,10 @@ form input{
         height: 2px;
         width: 100%;
         display: block;
+    }
+    tbody td{
+        padding: 20px;
+        /* border: 1px solid; */
     }
 }
 

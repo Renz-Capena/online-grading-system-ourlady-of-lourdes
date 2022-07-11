@@ -33,12 +33,12 @@ let close_btn_grade = document.querySelector('.close_btn_grade');
 
 create_grade_btn.addEventListener('click',()=>{
     form_grade_wrapper.style.opacity = "1";
-    form_grade_wrapper.style.zIndex = "2";
+    form_grade_wrapper.style.zIndex = "3";
 })
 
 close_btn_grade.addEventListener('click',()=>{
     form_grade_wrapper.style.opacity = "0";
-    form_grade_wrapper.style.zIndex = "-2";
+    form_grade_wrapper.style.zIndex = "-3";
 })
 //-------------------------------------------------------- reminders form
 let form_reminders = document.querySelector('.form_reminders');

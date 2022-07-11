@@ -240,6 +240,11 @@ caption{
     /* width: 1200px; */
     margin: auto;
     margin-top: 70px;
+    /* border: 1px solid red; */
+}
+.student_table tbody tr td{
+    padding: 2px;
+    /* border: 1px solid red; */
 }
 /* -------------------------------------edit_home php */
 .teacher_form_update{
@@ -359,10 +364,11 @@ caption{
     .action_row{
         margin-bottom: 100px;
         border: none;
-        width: 50%;
+        width: 100%;
         /* border: 1px solid; */
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        padding: 0;
     }
     /* --------teacher row responsive name in left */
     .teacher_table tbody tr td:nth-child(1)::before{
@@ -432,6 +438,11 @@ caption{
         position: fixed;
         /* border: 1px solid red; */
     }
+    .student_form h2{
+        width: 80%;
+        /* border: 1px solid red; */
+        margin: auto;
+    }
     .container_info_login{
         margin: 30px 0px;
         /* border: 1px solid red; */
@@ -450,6 +461,10 @@ caption{
         width: 90%;
         margin-top: 30px;
         /* border: 1px solid red; */
+    }
+    .teacher_form_update h2{
+        width: 80%;
+        margin: auto;
     }
     .student_form_update{
         margin-top: 30px;
