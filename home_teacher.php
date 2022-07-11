@@ -106,6 +106,7 @@
     if(isset($_POST['send_reminders'])){
        $teacher_email = $_POST['teacher_email'];
        $student_email = $_POST['student_email'];
+       $email_date = $_POST['date'];
        $msg = $_POST['msg'];
 
        $command_validate_email = "SELECT * FROM `students` WHERE email='$student_email'";
@@ -113,7 +114,7 @@
        $numrow_student_email_validate = $list_validate->num_rows;
 
        if($numrow_student_email_validate == 1){
-            $command_reminders = "INSERT INTO `reminders`(`student_email`, `from`, `message`) VALUES ('$student_email','$teacher_email','$msg')";
+            $command_reminders = "INSERT INTO `reminders`(`student_email`, `from`, `message`, `date`) VALUES ('$student_email','$teacher_email','$msg','$email_date')";
             $con->query($command_reminders);
        }else{
             echo "<script>alert('There is no such email `$student_email` in the Databse please double check the email')</script>";
@@ -299,6 +300,7 @@
 
     <div class="form_reminders">
         <form method="post">
+            <input type="hidden" name="date" id="reminders_date" style="width:100px">
             <input class="sample" type="hidden" name="teacher_email" value="<?php echo $row_teacher['email_teacher'] ?>">
             <label>TO : </label>
             <input class="student_email" type="email" name="student_email">

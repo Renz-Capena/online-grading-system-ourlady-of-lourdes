@@ -148,15 +148,15 @@
                 </tr>
             </thead>
             <tbody>
-                <?php do{ ?>
+                    <?php do{ ?>
+                        <tr class="reminders_td">
+                            <td class="td_border"><?php echo $row_reminders['from'] ?><br><?php echo $row_reminders['date']?></td>
+                            <td class="td_border"><?php echo $row_reminders['message'] ?></td>
+                        </tr>
+                    <?php }while($row_reminders = $list_reminders->fetch_assoc()) ?>
                     <tr class="reminders_td">
-                        <td class="td_border"><?php echo $row_reminders['from'] ?></td>
-                        <td class="td_border"><?php echo $row_reminders['message'] ?></td>
+                        <td colspan="2"><button class="close_reminder_btn">CLOSE</button></td>
                     </tr>
-                <?php }while($row_reminders = $list_reminders->fetch_assoc()) ?>
-                <tr class="reminders_td">
-                    <td colspan="2"><button class="close_reminder_btn">CLOSE</button></td>
-                </tr>
             </tbody>
         </table>
 

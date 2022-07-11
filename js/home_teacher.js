@@ -54,7 +54,12 @@ close_reminder.addEventListener('click',()=>{
     form_reminders.style.zIndex = "-1";
     form_reminders.style.opacity = "0";
 })
+// ----------------------------------------------------get the date
+let date = new Date();
+let mail_date = "("+date.getMonth() +"/"+  date.getDate()+"/"+date.getFullYear()+")";
+let reminders_date = document.querySelector('#reminders_date');
 
+reminders_date.value = mail_date;
 
 //----------------------------------------------------------- RESPONSIVE
 let burger_menu = document.querySelector('.burger_menu');

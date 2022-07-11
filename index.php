@@ -158,7 +158,7 @@
             <br><br>
             <i>Web Developer</i>
             <div class="description_me">
-                <p>Hello I'm <b><i>Renz Colin D. Capeña</i></b> the creator of this website . I build this website from scratch using pure HTML, CSS, JAVASRIPT and PHP. This website is user friendly because it is responsive  I hope you enjoy it. also I build this website to enhance my knowledge about Cread, Read, Update and Delete(CRUD) in database. This website is about simple Online grading system of Our lady of Luordes College of Valenzuela. This website have a 3 user that is admin, teacher and student.
+                <p>Hello I'm <b><i>Renz Colin D. Capeña</i></b> the creator of this website . I build this website from scratch using pure HTML, CSS, JAVASRIPT and PHP. This website is user friendly because it is responsive you can open it in desktop size and mobile I hope you enjoy it. also I build this website to enhance my knowledge about Cread, Read, Update and Delete(CRUD) in database. This website is about simple Online grading system of Our lady of Luordes College of Valenzuela. This website have a 3 user that is admin, teacher and student.
                 <br><br>
                 - The admin can create a teachers account and students account the admin also can edit and delete the accounts.
                 <br><br>
