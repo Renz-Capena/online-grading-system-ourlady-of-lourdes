@@ -14,8 +14,9 @@ body{
     z-index: -1;
     top: 0;
     left: 0;
+    /* padding-top:100px; */
     width: 100%;
-    height: 1000px;
+    height: 120vh;
     filter: blur(4px);
     opacity: 0.5;
 }
@@ -139,11 +140,13 @@ body{
 }
 /* -----------------------------------------------section 1 */
 .section_1{
-    /* border: 1px solid red; */
+    position: absolute;
+    left: 0;
+    right: 0;
     color: rgb(231, 231, 231);
     width: 60%;
     margin: auto;
-    /* border: 1px solid; */
+    z-index: -1;
 }
 .school_name{
     font-size: 45px;
@@ -154,6 +157,7 @@ body{
     background-color: rgb(146, 211, 255);
     color: rgb(0, 0, 0);
     padding: 20px;
+    margin-top: 100vh;
 }
 /* ----------------column_1 */
 .column_1{
@@ -277,9 +281,9 @@ footer p{
     .section_1{
         margin-top: 15%;
     }
-    .about{
+    /* .about{
         margin-top: 470px;
-    }
+    } */
     .login_form{
         margin-top: 10%;
         width: 400px;
@@ -342,10 +346,12 @@ footer p{
     /*----------------------------------- about */
     .about{
         /* margin-top: 400px; */
-        margin-top:35%;
+        /* margin-top:35%; */
+        padding-top: 70px;
     }
     .column_1 img{
         width: 90%;
+        /* margin-top: 100px; */
     }
     .column_1{
         display: block;
@@ -355,6 +361,10 @@ footer p{
         margin: auto;
         margin-top: 20px;
         width: 70%;
+    }
+    .column_1 p{
+        font-size: 14px;
+        font-weight: normal;
     }
     .column_2{
         display: block;
@@ -400,6 +410,7 @@ footer p{
         margin: auto;
         margin-top: 20px;
         line-height: 2;
+        font-size: 14px;
     }
     /* ---------------------------------------login form */
     .login_form{

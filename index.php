@@ -77,7 +77,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HOME</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
@@ -158,13 +158,26 @@
             <br><br>
             <i>Web Developer</i>
             <div class="description_me">
-                <p>Hello I'm <b><i>Renz Colin D. Capeña</i></b> the creator of this website . I build this website from scratch using pure HTML, CSS, JAVASRIPT and PHP. This website is user friendly because it is responsive you can open it in desktop size and mobile I hope you enjoy it. also I build this website to enhance my knowledge about Cread, Read, Update and Delete(CRUD) in database. This website is about simple Online grading system of Our lady of Luordes College of Valenzuela. This website have a 3 user that is admin, teacher and student.
+                <p>Hello I'm <b><i>Renz Collin D. Capeña</i></b> the creator of this website . I build this website from scratch using pure HTML, CSS, JAVASRIPT and PHP. This website is user friendly because it is responsive you can open it in desktop size and mobile I hope you enjoy it. Also I build this website to enhance my knowledge about Create, Read, Update and Delete(CRUD) in database. This website is about simple Online grading system of Our lady of Lourdes College of Valenzuela. This website have a 3 user that is admin, teacher and student.
                 <br><br>
-                - The admin can create a teachers account and students account the admin also can edit and delete the accounts.
+                - The admin can create a teachers account and students account, Also the admin can edit and delete the accounts.
+                <br><br>(Note: Email me at renzcollincapena@yahoo.com or message me in facebook <a href="https://www.facebook.com/renzcollin.capena/">Renz Collin D. Capeña</a> to get the admin account)
                 <br><br>
                 - The teachers account can manage the grades of the students they can create and update the grades of the students. Also the teachers account can remind the students about the grades.
                 <br><br>
-                - The students account can only view the grades.</p>
+                Sample teacher account:
+                <br>
+                Email: teacher@yahoo.com
+                <br>
+                Password: teacher
+                <br><br>
+                - The students account can only view the grades.
+                <br><br>
+                Sample student account:
+                <br>
+                Email: student@yahoo.com
+                <br>
+                Password: student</p>
             </div>
         </div>
     </section>
