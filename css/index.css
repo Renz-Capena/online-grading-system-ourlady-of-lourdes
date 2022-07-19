@@ -11,7 +11,7 @@ body{
 }
 .img_bg{
     position: absolute;
-    z-index: -1;
+    z-index: -2;
     top: 0;
     left: 0;
     /* padding-top:100px; */
@@ -141,6 +141,7 @@ body{
 /* -----------------------------------------------section 1 */
 .section_1{
     position: absolute;
+    top: 0;
     left: 0;
     right: 0;
     color: rgb(231, 231, 231);
@@ -151,6 +152,7 @@ body{
 .school_name{
     font-size: 45px;
     font-weight: bolder;
+    text-shadow: 2px 2px 7px black;
 }
 /* ----------------------------------------------section about */
 .about{
@@ -254,7 +256,6 @@ footer{
 }
 footer p{
     color: white;
-    /* padding-top: 10px; */
     font-size: 15px;
 }
 
@@ -336,8 +337,7 @@ footer p{
     }
     /* ----------------------------------section 1 */
     .section_1{
-        margin-top: 250px;
-        /* word-break: keep-all; */
+        margin-top: 20vh;
     }
     .school_name{
         font-size: 38px;
@@ -345,13 +345,10 @@ footer p{
     }
     /*----------------------------------- about */
     .about{
-        /* margin-top: 400px; */
-        /* margin-top:35%; */
         padding-top: 70px;
     }
     .column_1 img{
         width: 90%;
-        /* margin-top: 100px; */
     }
     .column_1{
         display: block;

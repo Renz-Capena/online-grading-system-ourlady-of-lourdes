@@ -68,7 +68,6 @@
 
         
     }
-    echo $_SESSION['status'];
 
 ?>
 <!DOCTYPE html>
